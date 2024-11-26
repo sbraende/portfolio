@@ -6,41 +6,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/variables.css">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/blog.css">
     <title>SEB--DEV: Blog</title>
 </head>
 
 <body>
     <header class="site-header">
-        <section class="site-header__logo-section site-header__divider">
+        <section class="site-header__logo-section">
             <img src="../assets/icons/logo/logo.svg" alt="SEB--DEV logo" class="site-header__logo">
         </section>
-        <section class="site-header__navbar-section site-header__divider">
+        <section class="site-header__navbar-section">
             <ul class="site-header__navbar">
-                <li>About</li>
-                <li>Portfolio</li>
-                <li>Blog</li>
-                <li>Resume</li>
+                <li><a href="">About</a></li>
+                <li><a href="">Portfolio</a></li>
+                <li><a href="" class="site-header__link--active">Blog</a></li>
+                <li><a href="">Resume</a></li>
             </ul>
         </section>
     </header>
-    <main>
+    <main class="site-main">
         <header class="main-header">
-            <div>
+            <div class="main-header__content">
                 <h1 class="main-header__title">Blog</h1>
-                <input type="search" name="search" id="search" class="main-header__search">
+                <button class="search-button">
+                    <img src="../assets/icons/general/search.svg" alt="search icon">
+                    <!-- <input type="search-container__input" name="search" id="search" class="main-header__search"> -->
+                </button>
             </div>
-            <ul>
-                <li>#three.js</li>
-                <li>#html</li>
-                <li>#javascript</li>
-                <li>#css</li>
-                <li>#design</li>
-                <li>#blender</li>
+            <ul class="main-header__hashtags">
+                <li><button>#three.js</button></li>
+                <li><button class="main-header__hashtags--active">#CSS</button></li>
+                <li><button>#HTML</button></li>
+                <li><button>#Blender</button></li>
+                <li><button>#assingment</button></li>
+                <li><button>#personalProject</button></li>
+                <li><button>#three.js</button></li>
+                <li><button>#three.js</button></li>
             </ul>
         </header>
         <ul class="blog-posts">
+            <!-- Blog post -->
             <li class="blog-posts__container">
                 <div class="blog-posts__content">
                     <img src="../assets/images/blogposts/stabak-fotball/render01.webp" alt="Stabæk fotball website"
@@ -56,8 +62,50 @@
                     </p>
                 </div>
                 <div class="blog-posts__tools">
-                    <img src="../assets/icons/general/heart.svg" alt="heart icon">
-                    <img src="../assets/icons/general/share-android.svg" alt="share icon">
+                    <button class="blog-posts__heart"><img src="../assets/icons/general/heart.svg"
+                            alt="heart icon"></button>
+                    <button class="blog-posts__share"><img src="../assets/icons/general/share-android.svg"
+                            alt="share icon"></button>
+                </div>
+            </li>
+            <!-- Blog post -->
+            <li class="blog-posts__container">
+                <div class="blog-posts__content">
+                    <img src="../assets/images/blogposts/stabak-fotball/render01.webp" alt="Stabæk fotball website"
+                        class="blog-posts__image">
+                    <h3 class="blog-posts__title">Design Clone - Stabæk Fotball</h3>
+                    <p class="blog-posts__description">
+                        I’ve been working on a responsive website dedicated to Stabæk
+                        Football fans! The goal is to provide an engaging platform to explore matches, stats, and team
+                        updates. From intuitive navigation to dynamic layouts for mobile and desktop, the site ensures a
+                        seamless experience. I'm especially proud of the sleek design and functionality tailored for
+                        fans.
+                        It’s still a work in progress, but stay tuned—exciting features are on the way!
+                    </p>
+                </div>
+                <div class="blog-posts__tools">
+                    <button><img src="../assets/icons/general/heart.svg" alt="heart icon"></button>
+                    <button><img src="../assets/icons/general/share-android.svg" alt="share icon"></button>
+                </div>
+            </li>
+            <!-- Blog post -->
+            <li class="blog-posts__container">
+                <div class="blog-posts__content">
+                    <img src="../assets/images/blogposts/stabak-fotball/render01.webp" alt="Stabæk fotball website"
+                        class="blog-posts__image">
+                    <h3 class="blog-posts__title">Design Clone - Stabæk Fotball</h3>
+                    <p class="blog-posts__description">
+                        I’ve been working on a responsive website dedicated to Stabæk
+                        Football fans! The goal is to provide an engaging platform to explore matches, stats, and team
+                        updates. From intuitive navigation to dynamic layouts for mobile and desktop, the site ensures a
+                        seamless experience. I'm especially proud of the sleek design and functionality tailored for
+                        fans.
+                        It’s still a work in progress, but stay tuned—exciting features are on the way!
+                    </p>
+                </div>
+                <div class="blog-posts__tools">
+                    <button><img src="../assets/icons/general/heart.svg" alt="heart icon"></button>
+                    <button><img src="../assets/icons/general/share-android.svg" alt="share icon"></button>
                 </div>
             </li>
         </ul>

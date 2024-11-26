@@ -4,6 +4,10 @@
   --color-text-light: #eaeaea;
   --color-text-dark: #333333;
 
+  --color-medium: #686868;
+  --color-light: #eaeaea;
+  --color-dark: #333333;
+
   /* SPACING */
   --spacing-x-small: 0.25rem;
   --spacing-small: 0.5rem;
@@ -14,7 +18,7 @@
   /* FONT SIZE */
   --font-size-small: 0.5rem;
   --font-size-base: 1rem;
-  --font-size-medium: 1.2rem;
+  --font-size-medium: 1.1rem;
   --font-size-large: 1.5rem;
   --font-size-x-large: 2rem;
 
