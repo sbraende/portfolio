@@ -30,30 +30,42 @@ const blogPostsElement = document.querySelector(".blog-posts");
 const createBlogPost = (blogPostArray) => {
   blogPostArray.forEach((blogPost, blogPostIndex) => {
     // CREATE BLOG DOM ELEMENTS
-
-    // TODO: Add A tags for title and image
     const blogPostContainer = document.createElement("li");
     const blogPostContent = document.createElement("div");
+    const blogPostContentAImage = document.createElement("a");
     const blogPostImage = document.createElement("img");
+    const blogPostContentATitle = document.createElement("a");
     const blogPostTitle = document.createElement("h3");
     const blogPostDescription = document.createElement("p");
     const blogPostTools = document.createElement("div");
-    const blogPostShare = document.createElement("button");
+    const blogPostHeartButton = document.createElement("button");
+    const blogPostHeartImage = document.createElement("img");
+    const blogPostShareButton = document.createElement("button");
     const blogPostShareImage = document.createElement("img");
 
     // APPEND ELEMENTS
     blogPostsElement.append(blogPostContainer);
     blogPostContainer.append(blogPostContent);
-    blogPostContent.append(blogPostImage, blogPostTitle, blogPostDescription);
+    blogPostContent.append(
+      blogPostContentAImage,
+      blogPostContentATitle,
+      blogPostDescription
+    );
+    blogPostContentAImage.append(blogPostImage);
+    blogPostContentATitle.append(blogPostTitle);
     blogPostContainer.append(blogPostTools);
-    blogPostTools.append(blogPostShare);
-    blogPostShare.append(blogPostShareImage);
+    blogPostTools.append(blogPostHeartButton, blogPostShareButton);
+    blogPostHeartButton.append(blogPostHeartImage);
+    blogPostShareButton.append(blogPostShareImage);
 
     // ADD CONTENT TO ELEMENT
     blogPostContent.href = "#";
+    blogPostContentAImage.href = blogPost.path;
     blogPostImage.src = blogPost.thumbnail;
+    blogPostContentATitle.href = blogPost.path;
     blogPostTitle.textContent = blogPost.title;
     blogPostDescription.textContent = blogPost.description;
+    blogPostHeartImage.src = "../assets/icons/general/heart.svg";
     blogPostShareImage.src = "../assets/icons/general/share-android.svg";
 
     // ADD CLASS TO ELEMENT
@@ -63,10 +75,9 @@ const createBlogPost = (blogPostArray) => {
     blogPostTitle.classList.add("blog-posts__title");
     blogPostDescription.classList.add("blog-posts__description");
     blogPostTools.classList.add("blog-posts__tools");
-    blogPostShare.classList.add("blog-posts__share");
+    blogPostHeartButton.classList.add("blog-posts__heart");
+    blogPostShareButton.classList.add("blog-posts__share");
   });
 };
 
 createBlogPost(blogPostsArray);
-
-// blogPostsArray.forEach((e) => console.log(e.title));
