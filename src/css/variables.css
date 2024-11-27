@@ -4,8 +4,9 @@
   --color-text-light: #eaeaea;
   --color-text-dark: #333333;
 
-  --color-medium: #686868;
+  --color-x-light: #fbfbfb;
   --color-light: #eaeaea;
+  --color-medium: #686868;
   --color-dark: #333333;
 
   /* SPACING */
@@ -21,6 +22,10 @@
   --font-size-medium: 1.1rem;
   --font-size-large: 1.5rem;
   --font-size-x-large: 2rem;
+
+  /* FONT FAMLY */
+  --font-family-DM_Mono: "DM Mono", monospace;
+  --font-family-DM_Sans: "DM Sans", sans-serif;
 
   /* BORDER RADIUS */
   --boarder-radius-small: 0.25rem;
