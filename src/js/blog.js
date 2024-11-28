@@ -2,7 +2,7 @@
 const blogPostsArray = [
   {
     title: "Design Clone - Stabæk Fotball",
-    date: "2024-11-26",
+    date: new Date(2024, 11, 26),
     thumbnail:
       "../assets/images/blogposts/stabak-fotball/stabak-fotball-thumbnail.webp",
     description:
@@ -13,7 +13,7 @@ const blogPostsArray = [
   },
   {
     title: "Design Clone - 2048",
-    date: "2024-10-21",
+    date: new Date(2024, 11, 21),
     thumbnail: "../assets/images/blogposts/2048/2048-thumbnail.webp",
     description:
       "This project is a design copy of the popular game 2048, originally created by Gabriele Cirulli. The game features a grid where players slide tiles of numbers to combine them, aiming to reach the 2048 tile.",
@@ -24,21 +24,47 @@ const blogPostsArray = [
 ];
 
 // SELECT ELEMENTS FROM DOM
-// TODO: Implement sort function
-// const toolsSortSelect = document.querySelector(".tools__sort-select");
-// TODO: Implement toggle visbility Search
-// const searchButton = document.querySelector(".search-button");
-
+const sortSelect = document.querySelector(".tools__sort-select");
 const searchInput = document.querySelector(".tools__search-input");
 const blogPostsElement = document.querySelector(".blog-posts");
+// TODO: Implement sort toggle
+// TODO: Implement toggle visbility Search
 
 // GENERAL FUNCTIONS
+document.addEventListener("DOMContentLoaded", () =>
+  renderBlogPosts(blogPostsArray)
+);
+
+// SORT EVENT LISTENER:
+sortSelect.addEventListener("change", (event) =>
+  sortBlogPosts(event, blogPostsArray)
+);
+
+// SORT BLOGPOST FUNCTION
+const sortBlogPosts = (event, blogPostsArray) => {
+  // Clear rendered blogposts.
+  blogPostsElement.textContent = "";
+
+  // Based on userOption, returns sorted array:
+  let sortedArray;
+  if (event.target.value === "newest-frist") {
+    sortedArray = blogPostsArray.sort((a, b) => {
+      return b.date.getTime() - a.date.getTime();
+    });
+  } else if (event.target.value === "oldest-frist") {
+    sortedArray = blogPostsArray.sort((a, b) => {
+      return a.date.getTime() - b.date.getTime();
+    });
+  } else if (event.target.value === "")
+    // Render blogpost with sortedArray.
+    renderBlogPosts(sortedArray);
+};
 
 // SEARCH EVENT LISTENER
-searchInput.addEventListener("input", (event) => searchBlogs(event));
+searchInput.addEventListener("input", () => searchBlogs(blogPostsArray));
 
 // SEARCH FUNCTION
-const searchBlogs = () => {
+const searchBlogs = (blogPostsArray) => {
   // Clear rendered blogposts.
   blogPostsElement.textContent = "";
 
@@ -49,7 +75,7 @@ const searchBlogs = () => {
       .includes(searchInput.value.toLowerCase());
   });
 
-  // Render blogPosts with new Array.
+  // Render blogPosts with filteredArray.
   renderBlogPosts(filteredArray);
 };
 
@@ -117,5 +143,3 @@ const renderBlogPosts = (blogPostArray) => {
     blogPostShareButton.classList.add("blog-posts__share");
   });
 };
-
-renderBlogPosts(blogPostsArray);
