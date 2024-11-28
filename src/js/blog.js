@@ -24,10 +24,48 @@ const blogPostsArray = [
 ];
 
 // SELECT ELEMENTS FROM DOM
+// TODO: Implement sort function
+// const toolsSortSelect = document.querySelector(".tools__sort-select");
+// TODO: Implement toggle visbility Search
+// const searchButton = document.querySelector(".search-button");
+
+const searchInput = document.querySelector(".tools__search-input");
 const blogPostsElement = document.querySelector(".blog-posts");
 
+// GENERAL FUNCTIONS
+
+// SEARCH EVENT LISTENER
+searchInput.addEventListener("input", (event) => searchBlogs(event));
+
+// SEARCH FUNCTION
+const searchBlogs = () => {
+  // Clear rendered blogposts.
+  blogPostsElement.textContent = "";
+
+  // Create new filteredArray based on userInput and blogPost titles.
+  let filteredArray = blogPostsArray.filter((e, index) => {
+    return blogPostsArray[index].title
+      .toLowerCase()
+      .includes(searchInput.value.toLowerCase());
+  });
+
+  // Render blogPosts with new Array.
+  renderBlogPosts(filteredArray);
+};
+
+// TODO: Toggle visbility inputfield
+// searchButton.addEventListener("click", () => blogSearch());
+
+// const blogSearch = () => {
+// if (searchInput.style.display === "none") {
+//   searchInput.style.display = "inline";
+// } else {
+//   searchInput.style.display = "none";
+// }
+// };
+
 // CREATE BLOGPOSTS
-const createBlogPost = (blogPostArray) => {
+const renderBlogPosts = (blogPostArray) => {
   blogPostArray.forEach((blogPost, blogPostIndex) => {
     // CREATE BLOG DOM ELEMENTS
     const blogPostContainer = document.createElement("li");
@@ -80,4 +118,4 @@ const createBlogPost = (blogPostArray) => {
   });
 };
 
-createBlogPost(blogPostsArray);
+renderBlogPosts(blogPostsArray);

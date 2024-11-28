@@ -12,44 +12,55 @@
 </head>
 
 <body>
-    <header class="site-header">
-        <section class="site-header__logo-section">
-            <img src="../assets/icons/logo/logo.svg" alt="SEB--DEV logo" class="site-header__logo">
+    <!-- LOGO AND NAV SIDEBAR -->
+    <div class="sidebar">
+        <section class="sidebar__logo-section">
+            <img src="../assets/icons/logo/logo.svg" alt="SEB--DEV logo" class="sidebar__logo">
         </section>
-        <section class="site-header__navbar-section">
-            <ul class="site-header__navbar">
+        <section class="sidebar__navbar-section">
+            <ul class="sidebar__navbar">
                 <li><a href="">About</a></li>
                 <li><a href="">Portfolio</a></li>
-                <li><a href="" class="site-header__link--active">Blog</a></li>
+                <li><a href="" class="sidebar__link--active">Blog</a></li>
                 <li><a href="">Resume</a></li>
             </ul>
         </section>
-    </header>
+    </div>
+    <!-- MAIN SECTION -->
     <main class="site-main">
+        <!-- HEADER SECTION  -->
         <header class="main-header">
-            <div class="main-header__content">
-                <h1 class="main-header__title">Blog</h1>
-                <button class="search-button">
-                    <img src="../assets/icons/general/search.svg" alt="search icon">
-                    <!-- <input type="search-container__input" name="search" id="search" class="main-header__search"> -->
-                </button>
+            <h1 class="main-header__title">Blog</h1>
+            <!-- HEADER SORT AND SEARCH TOOLS -->
+            <div class="main_header__tools-container">
+                <!-- HEADER SORT -->
+                <div class="tools tools__sort">
+                    <p class="tools__title">Sort:</p>
+                    <!-- TODO: Create button animation -->
+                    <!-- <button class="tools__button"><img src="../assets/icons/general/sort.svg" alt="sort icon"></button> -->
+                    <select name="tools__sort-select" id="sort">
+                        <option value="newest-frist">Newest first</option>
+                        <option value="oldest-frist">Oldest first</option>
+                        <option value="most-liked">Most liked</option>
+                        <option value="shortest-readingtime">Shortest readingtime</option>
+                        <option value="longest-readingtime">Longest readingtime</option>
+                    </select>
+                </div>
+                <!-- HEADER SEARCH -->
+                <div class="tools tools__search">
+                    <p class="tools__title">Search:</p>
+                    <!-- TODO: Create button animation search -->
+                    <!-- <img src="../assets/icons/general/search.svg" alt="search icon"> -->
+                    <input type="text" name="search" id="search" placeholder="Search titles..."
+                        class="tools__search-input">
+                </div>
             </div>
-            <ul class="main-header__hashtags">
-                <li><button>#three.js</button></li>
-                <li><button class="main-header__hashtags--active">#CSS</button></li>
-                <li><button>#HTML</button></li>
-                <li><button>#Blender</button></li>
-                <li><button>#assingment</button></li>
-                <li><button>#personalProject</button></li>
-                <li><button>#three.js</button></li>
-                <li><button>#three.js</button></li>
-            </ul>
         </header>
+        <!-- BLOGPOSTS SECTION -->
         <ul class="blog-posts">
-            <!-- Blog post -->
-            <li class="blog-posts__container">
+            <!-- TEMPLATE BLOGPOST -->
+            <!-- <li class="blog-posts__container">
                 <div class="blog-posts__content">
-                    <!-- CONTINUE HERE -->
                     <a href="">
                         <img src="../assets/images/blogposts/stabak-fotball/stabak-fotball-thumbnail.webp"
                             alt="Stabæk fotball website" class="blog-posts__image">
@@ -72,7 +83,7 @@
                     <button class="blog-posts__share"><img src="../assets/icons/general/share-android.svg"
                             alt="share icon"></button>
                 </div>
-            </li>
+            </li> -->
         </ul>
     </main>
     <script src="../js/blog.js"></script>

@@ -10,6 +10,7 @@
   --color-dark: #333333;
 
   /* SPACING */
+  --spacing-xx-small: 0.1rem;
   --spacing-x-small: 0.25rem;
   --spacing-small: 0.5rem;
   --spacing-medium: 1rem;
@@ -30,4 +31,7 @@
   /* BORDER RADIUS */
   --boarder-radius-small: 0.25rem;
   --boarder-radius-medium: 0.5rem;
+
+  /* ANIMATION SPEED */
+  --animated-speed-normal: 0.2s linear;
 }

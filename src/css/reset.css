@@ -9,6 +9,8 @@ a {
 }
 
 button {
+  border: none;
+  border-radius: var(--boarder-radius-small);
   cursor: pointer;
 }
 
