@@ -48,16 +48,15 @@ const sortBlogPosts = (event, blogPostsArray) => {
   // Based on userOption, returns sorted array:
   let sortedArray;
   if (event.target.value === "newest-frist") {
-    sortedArray = blogPostsArray.sort((a, b) => {
-      return b.date.getTime() - a.date.getTime();
-    });
+    sortedArray = blogPostsArray.sort(
+      (a, b) => b.date.getTime() - a.date.getTime()
+    );
   } else if (event.target.value === "oldest-frist") {
-    sortedArray = blogPostsArray.sort((a, b) => {
-      return a.date.getTime() - b.date.getTime();
-    });
-  } else if (event.target.value === "")
-    // Render blogpost with sortedArray.
-    renderBlogPosts(sortedArray);
+    sortedArray = blogPostsArray.sort(
+      (a, b) => a.date.getTime() - b.date.getTime()
+    );
+  }
+  renderBlogPosts(sortedArray);
 };
 
 // SEARCH EVENT LISTENER
