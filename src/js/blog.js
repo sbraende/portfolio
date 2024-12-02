@@ -10,6 +10,8 @@ const blogPostsArray = [
     path: "../blogposts/stabak-fotball.html",
     hashtags: "design HTML CSS assignment",
     readLengthMin: "5",
+    isLiked: true,
+    id: "stabak",
   },
   {
     title: "Design Clone - 2048",
@@ -20,6 +22,8 @@ const blogPostsArray = [
     path: "../blogposts/2048.html",
     hashtags: "design HTML CSS assignment",
     readLengthMin: "2",
+    isLiked: false,
+    id: "game2048",
   },
 ];
 
@@ -33,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () =>
   renderBlogPosts(blogPostsArray)
 );
 
-// EVENTLISTENERS:
+// EVENT LISTENERS:
 sortSelect.addEventListener("change", (event) =>
   sortBlogPosts(event, blogPostsArray)
 );
@@ -72,6 +76,37 @@ const searchBlogs = (blogPostsArray) => {
 
   // Render blogPosts with filteredArray.
   renderBlogPosts(filteredArray);
+};
+
+// INIT "LIKEDPOSTS"
+const initLiked = () => {
+  let likedPost = {};
+  blogPostsArray.forEach((blogpost) => {
+    // { blogpostID: { isLiked: true/false } }
+    likedPost[blogpost.id] = { isLiked: false };
+  });
+  // Create local storage for newly created likedPost object
+  localStorage.setItem("likedPosts", JSON.stringify(likedPost));
+  return likedPost;
+};
+let likedPosts = JSON.parse(localStorage.getItem("likedPosts")) || initLiked();
+
+// LIKE POST FUNCTION
+const likeBlogPost = (e) => {
+  e.currentTarget.classList.toggle("blog-posts__heart--active");
+  // Get blogpost ID of current clicked heart.
+  const blogPostId = e.target.closest(".blog-posts__container");
+  if (e.currentTarget.classList.contains("blog-posts__heart--active")) {
+    // Set isLiked of this current blogpost to true.
+    likedPosts[blogPostId.dataset.id].isLiked = true;
+    e.target.src = "../assets/icons/general/heart-solid.svg";
+  } else {
+    // Set isLiked of this current blogpost to false.
+    likedPosts[blogPostId.dataset.id].isLiked = false;
+    e.target.src = "../assets/icons/general/heart.svg";
+  }
+  // Update likedPosts value on localServer.
+  localStorage.setItem("likedPosts", JSON.stringify(likedPosts));
 };
 
 // CREATE BLOGPOSTS
@@ -113,7 +148,6 @@ const renderBlogPosts = (blogPostArray) => {
     blogPostContentATitle.href = blogPost.path;
     blogPostTitle.textContent = blogPost.title;
     blogPostDescription.textContent = blogPost.description;
-    blogPostHeartImage.src = "../assets/icons/general/heart.svg";
     blogPostShareImage.src = "../assets/icons/general/share-android.svg";
 
     // ADD CLASS TO ELEMENT
@@ -126,16 +160,19 @@ const renderBlogPosts = (blogPostArray) => {
     blogPostHeartButton.classList.add("blog-posts__heart");
     blogPostShareButton.classList.add("blog-posts__share");
 
-    // ADD EVENTLISTENERS TO ELEMENT
-    blogPostHeartButton.addEventListener("click", (e) => likePost(e));
-  });
-};
+    // ADD DATA TO ELEMENT
+    blogPostContainer.dataset.id = blogPost.id;
 
-const likePost = (e) => {
-  e.currentTarget.classList.toggle("blog-posts__heart--active");
-  if (e.currentTarget.classList.contains("blog-posts__heart--active")) {
-    e.target.src = "../assets/icons/general/heart-solid.svg";
-  } else {
-    e.target.src = "../assets/icons/general/heart.svg";
-  }
+    // GET LOCALSTORAGE DATA FOR LIKED
+    // if blogpost has been liked, render heart solid...
+    if (likedPosts[blogPost.id].isLiked) {
+      blogPostHeartButton.classList.add("blog-posts__heart--active");
+      blogPostHeartImage.src = "../assets/icons/general/heart-solid.svg";
+    } else {
+      blogPostHeartImage.src = "../assets/icons/general/heart.svg";
+    }
+
+    // ADD EVENTLISTENERS TO ELEMENT
+    blogPostHeartButton.addEventListener("click", (e) => likeBlogPost(e));
+  });
 };
