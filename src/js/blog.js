@@ -35,10 +35,11 @@ document.addEventListener("DOMContentLoaded", () =>
   renderBlogPosts(blogPostsArray)
 );
 
-// SORT EVENT LISTENER:
+// SORT AND SEARCH EVENTLISTENERS:
 sortSelect.addEventListener("change", (event) =>
   sortBlogPosts(event, blogPostsArray)
 );
+searchInput.addEventListener("input", () => searchBlogs(blogPostsArray));
 
 // SORT BLOGPOST FUNCTION
 const sortBlogPosts = (event, blogPostsArray) => {
@@ -59,9 +60,6 @@ const sortBlogPosts = (event, blogPostsArray) => {
   renderBlogPosts(sortedArray);
 };
 
-// SEARCH EVENT LISTENER
-searchInput.addEventListener("input", () => searchBlogs(blogPostsArray));
-
 // SEARCH FUNCTION
 const searchBlogs = (blogPostsArray) => {
   // Clear rendered blogposts.
@@ -78,20 +76,9 @@ const searchBlogs = (blogPostsArray) => {
   renderBlogPosts(filteredArray);
 };
 
-// TODO: Toggle visbility inputfield
-// searchButton.addEventListener("click", () => blogSearch());
-
-// const blogSearch = () => {
-// if (searchInput.style.display === "none") {
-//   searchInput.style.display = "inline";
-// } else {
-//   searchInput.style.display = "none";
-// }
-// };
-
 // CREATE BLOGPOSTS
 const renderBlogPosts = (blogPostArray) => {
-  blogPostArray.forEach((blogPost, blogPostIndex) => {
+  blogPostArray.forEach((blogPost) => {
     // CREATE BLOG DOM ELEMENTS
     const blogPostContainer = document.createElement("li");
     const blogPostContent = document.createElement("div");

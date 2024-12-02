@@ -180,7 +180,7 @@ body {
 }
 
 .blog-posts__description {
-  /* TODO: Check if this is correct */
+  /* BUG: Check if this is correct */
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
