@@ -9,7 +9,7 @@ const blogPostsArray = [
       "I've been working on a responsive website dedicated to Stabæk Football fans! The goal is to provide an engaging platform to explore matches, stats, and team",
     path: "../blogposts/stabak-fotball.html",
     hashtags: "design HTML CSS assignment",
-    readLengthMin: "5",
+    readLengthMin: 5,
     isLiked: true,
     id: "stabak",
   },
@@ -21,7 +21,7 @@ const blogPostsArray = [
       "This project is a design copy of the popular game 2048, originally created by Gabriele Cirulli. The game features a grid where players slide tiles of numbers to combine them, aiming to reach the 2048 tile.",
     path: "../blogposts/2048.html",
     hashtags: "design HTML CSS assignment",
-    readLengthMin: "2",
+    readLengthMin: 2,
     isLiked: false,
     id: "game2048",
   },
@@ -50,13 +50,21 @@ const sortBlogPosts = (event, blogPostsArray) => {
 
   // Based on userOption, returns sorted array:
   let sortedArray;
-  if (event.target.value === "newest-frist") {
+  if (event.target.value === "newest-first") {
     sortedArray = blogPostsArray.sort(
       (a, b) => b.date.getTime() - a.date.getTime()
     );
-  } else if (event.target.value === "oldest-frist") {
+  } else if (event.target.value === "oldest-first") {
     sortedArray = blogPostsArray.sort(
       (a, b) => a.date.getTime() - b.date.getTime()
+    );
+  } else if (event.target.value === "shortest-first") {
+    sortedArray = blogPostsArray.sort(
+      (a, b) => a.readLengthMin - b.readLengthMin
+    );
+  } else if (event.target.value === "longest-first") {
+    sortedArray = blogPostsArray.sort(
+      (a, b) => b.readLengthMin - a.readLengthMin
     );
   }
   renderBlogPosts(sortedArray);
