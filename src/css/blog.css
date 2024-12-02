@@ -49,7 +49,6 @@ body {
 }
 
 .site-main {
-  width: 100%;
   padding: 0 var(--spacing-large);
   flex-grow: 1;
   display: flex;
@@ -88,50 +87,6 @@ body {
 .tools__button {
   padding: var(--spacing-xx-small);
 }
-
-/* TODO: Create button animation for sort */
-/* .tools__button img {
-  height: 24px;
-  width: auto;
-} */
-
-/* Create button animation for search */
-/* .search-button {
-  padding: var(--spacing-x-small);
-  grid-column: 3 / 4;
-  justify-self: end;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: var(--spacing-x-small);
-
-  border: none;
-  border-radius: var(--boarder-radius-small);
-
-  transition: opacity var(--animated-speed-normal);
-} */
-
-/* .search-button:hover {
-  opacity: 0.7;
-} */
-
-/* .search-button img {
-  width: 18px;
-  height: auto;
-} */
-
-/* .tools__search-input {
-  display: none;
-  padding: 0 var(--spacing-x-small);
-  border: none;
-  background-color: transparent;
-  font-size: var(--font-size-medium);
-}
-
-.search-button input:focus {
-  outline-color: var(--color-text-medium);
-} */
 
 .blog-posts {
   display: flex;

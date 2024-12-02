@@ -27,15 +27,13 @@ const blogPostsArray = [
 const sortSelect = document.querySelector(".tools__sort-select");
 const searchInput = document.querySelector(".tools__search-input");
 const blogPostsElement = document.querySelector(".blog-posts");
-// TODO: Implement sort toggle
-// TODO: Implement toggle visbility Search
 
 // GENERAL FUNCTIONS
 document.addEventListener("DOMContentLoaded", () =>
   renderBlogPosts(blogPostsArray)
 );
 
-// SORT AND SEARCH EVENTLISTENERS:
+// EVENTLISTENERS:
 sortSelect.addEventListener("change", (event) =>
   sortBlogPosts(event, blogPostsArray)
 );
@@ -127,5 +125,17 @@ const renderBlogPosts = (blogPostArray) => {
     blogPostTools.classList.add("blog-posts__tools");
     blogPostHeartButton.classList.add("blog-posts__heart");
     blogPostShareButton.classList.add("blog-posts__share");
+
+    // ADD EVENTLISTENERS TO ELEMENT
+    blogPostHeartButton.addEventListener("click", (e) => likePost(e));
   });
+};
+
+const likePost = (e) => {
+  e.currentTarget.classList.toggle("blog-posts__heart--active");
+  if (e.currentTarget.classList.contains("blog-posts__heart--active")) {
+    e.target.src = "../assets/icons/general/heart-solid.svg";
+  } else {
+    e.target.src = "../assets/icons/general/heart.svg";
+  }
 };
