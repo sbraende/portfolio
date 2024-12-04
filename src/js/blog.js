@@ -66,6 +66,14 @@ const sortBlogPosts = (event, blogPostsArray) => {
     sortedArray = blogPostsArray.sort(
       (a, b) => b.readLengthMin - a.readLengthMin
     );
+  } else if (event.target.value === "most-liked") {
+    // TODO: Probably want to fix this blogPostArray properly. Function for updateing Array?
+    // Store whole array in local-storage for easy access to all attributes?
+    blogPostsArray.forEach((blogPost) => {
+      console.log(Number(blogPost.isLiked));
+      console.log(JSON.parse(localStorage.getItem("likedPosts")));
+    });
+    sortedArray = blogPostsArray.sort((a, b) => b.isLiked - a.isLiked);
   }
   renderBlogPosts(sortedArray);
 };

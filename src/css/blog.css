@@ -135,7 +135,7 @@ body {
 }
 
 .blog-posts__description {
-  /* BUG: Check if this is correct */
+  /* TODO: Implement this with JS instead using slicing */
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -153,4 +153,7 @@ body {
 .blog-posts__tools button {
   border: none;
   background-color: transparent;
+}
+
+@media screen and (max-width: 430px) {
 }
