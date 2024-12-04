@@ -13,24 +13,29 @@
 
 <body>
     <!-- LOGO AND NAV SIDEBAR -->
-    <div class="sidebar">
-        <section class="sidebar__logo-section">
-            <img src="../assets/icons/logo/logo.svg" alt="SEB--DEV logo" class="sidebar__logo">
+    <header class="header header--active">
+        <section class="header__logo-section">
+            <img src="../assets/icons/logo/logo.svg" alt="SEB--DEV logo" class="header__logo">
         </section>
-        <section class="sidebar__navbar-section">
-            <ul class="sidebar__navbar">
+        <section class="header__navbar-section">
+            <ul class="header__navbar">
                 <li><a href="">About</a></li>
                 <li><a href="">Portfolio</a></li>
-                <li><a href="" class="sidebar__link--active">Blog</a></li>
+                <li><a href="" class="header__link--active">Blog</a></li>
                 <li><a href="">Resume</a></li>
             </ul>
         </section>
-    </div>
+    </header>
     <!-- MAIN SECTION -->
     <main class="site-main">
         <!-- HEADER SECTION  -->
         <header class="main-header">
             <h1 class="main-header__title">Blog</h1>
+            <div class="main-header__toggle-button-container">
+                <button class="main-header__toggle-button">
+                    <img src="../assets/icons/general/menu.svg" alt="menu icon">
+                </button>
+            </div>
             <!-- SORT AND SEARCH TOOLS -->
             <div class="main_header__tools-container">
                 <!-- SORT -->

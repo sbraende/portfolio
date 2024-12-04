@@ -28,9 +28,19 @@ const blogPostsArray = [
 ];
 
 // SELECT ELEMENTS FROM DOM
+const toggleHeaderButton = document.querySelector(
+  ".main-header__toggle-button"
+);
+const headerElement = document.querySelector(".header");
 const sortSelect = document.querySelector(".tools__sort-select");
 const searchInput = document.querySelector(".tools__search-input");
 const blogPostsElement = document.querySelector(".blog-posts");
+
+// TOGGLE HEADER MOBILE
+console.log(toggleHeaderButton);
+toggleHeaderButton.addEventListener("click", () => {
+  headerElement.classList.toggle("header--active");
+});
 
 // GENERAL FUNCTIONS
 document.addEventListener("DOMContentLoaded", () =>
