@@ -38,8 +38,7 @@ const blogPostsElement = document.querySelector(".blog-posts");
 
 // ON DOM CONTENT LOAD
 document.addEventListener("DOMContentLoaded", () => {
-  const blogPosts = getBlogPosts();
-  renderBlogPosts(blogPosts);
+  renderBlogPosts(initBlogPosts());
 });
 
 // EVENT LISTENERS:
@@ -52,11 +51,12 @@ searchInput.addEventListener("input", () => searchBlogs(blogPostsArray));
 // ----- FUNCTIONS ----- //:
 
 // LOCALSTORAGE BLOGPOSTS FUNCTIONS
-// const initBlogPosts = () =>
-
-const getBlogPosts = () =>
+const initBlogPosts = () =>
   JSON.parse(localStorage.getItem("blogPostsArray")) ||
-  localStorage.setItem("blogPostsArray", JSON.stringify(blogPostsArray));
+  (localStorage.setItem("blogPostsArray", JSON.stringify(blogPostsArray)),
+  blogPostsArray);
+
+const getBlogPosts = () => JSON.parse(localStorage.getItem("blogPostsArray"));
 
 const storeBlogPosts = (blogPosts) =>
   localStorage.setItem("blogPostsArray", JSON.stringify(blogPosts));
