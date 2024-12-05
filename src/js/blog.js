@@ -36,10 +36,11 @@ const sortSelect = document.querySelector(".tools__sort-select");
 const searchInput = document.querySelector(".tools__search-input");
 const blogPostsElement = document.querySelector(".blog-posts");
 
-// GENERAL FUNCTIONS
-document.addEventListener("DOMContentLoaded", () =>
-  renderBlogPosts(blogPostsArray)
-);
+// ON DOM CONTENT LOAD
+document.addEventListener("DOMContentLoaded", () => {
+  const blogPosts = getBlogPosts();
+  renderBlogPosts(blogPosts);
+});
 
 // EVENT LISTENERS:
 toggleHeaderButton.addEventListener("click", () => toggleHeader());
@@ -48,7 +49,14 @@ sortSelect.addEventListener("change", (event) =>
 );
 searchInput.addEventListener("input", () => searchBlogs(blogPostsArray));
 
-// FUNTIONS
+// ----- FUNCTIONS ----- //:
+
+// GET/SET BLOGPOSTS FUNCTION
+const getBlogPosts = () =>
+  JSON.parse(localStorage.getItem("blogPostsArray")) ||
+  localStorage.setItem("blogPostsArray", JSON.stringify(blogPostsArray));
+
+// TOGGLE HEADER
 const toggleHeader = () => headerElement.classList.toggle("header--active");
 
 // SORT BLOGPOST FUNCTION
@@ -76,7 +84,6 @@ const sortBlogPosts = (event, blogPostsArray) => {
     );
   } else if (event.target.value === "most-liked") {
     // TODO: Probably want to fix this blogPostArray properly. Function for updateing Array?
-    // Store whole array in local-storage for easy access to all attributes?
     blogPostsArray.forEach((blogPost) => {
       console.log(Number(blogPost.isLiked));
       console.log(JSON.parse(localStorage.getItem("likedPosts")));
@@ -88,54 +95,54 @@ const sortBlogPosts = (event, blogPostsArray) => {
 
 // SEARCH FUNCTION
 const searchBlogs = (blogPostsArray) => {
-  // Clear rendered blogposts.
+  // Clear rendered blogposts
   blogPostsElement.textContent = "";
 
-  // Create new filteredArray based on userInput and blogPost titles.
+  // Create new filteredArray based on userInput and blogPost titles
   let filteredArray = blogPostsArray.filter((e, index) => {
     return blogPostsArray[index].title
       .toLowerCase()
       .includes(searchInput.value.toLowerCase());
   });
 
-  // Render blogPosts with filteredArray.
+  // Render blogPosts with filteredArray
   renderBlogPosts(filteredArray);
 };
 
-// INIT "LIKEDPOSTS"
-const initLiked = () => {
-  let likedPost = {};
-  blogPostsArray.forEach((blogpost) => {
-    // { blogpostID: { isLiked: true/false } }
-    likedPost[blogpost.id] = { isLiked: false };
-  });
-  // Create local storage for newly created likedPost object
-  localStorage.setItem("likedPosts", JSON.stringify(likedPost));
-  return likedPost;
-};
-let likedPosts = JSON.parse(localStorage.getItem("likedPosts")) || initLiked();
-
 // LIKE POST FUNCTION
 const likeBlogPost = (e) => {
+  // Get latest blogPosts from localstorage
+  const blogPosts = getBlogPosts();
+
+  // Get id for currentBlogPost
+  const currentBlogPostsId = e.currentTarget.closest(".blog-posts__container")
+    .dataset.id;
+
   e.currentTarget.classList.toggle("blog-posts__heart--active");
-  // Get blogpost ID of current clicked heart.
-  const blogPostId = e.target.closest(".blog-posts__container");
+
   if (e.currentTarget.classList.contains("blog-posts__heart--active")) {
-    // Set isLiked of this current blogpost to true.
-    likedPosts[blogPostId.dataset.id].isLiked = true;
+    blogPosts.forEach((blogPost) => {
+      if (blogPost.id === currentBlogPostsId) {
+        blogPost.isLiked = true;
+      }
+    });
     e.target.src = "../assets/icons/general/heart-solid.svg";
   } else {
-    // Set isLiked of this current blogpost to false.
-    likedPosts[blogPostId.dataset.id].isLiked = false;
+    blogPosts.forEach((blogPost) => {
+      if (blogPost.id === currentBlogPostsId) {
+        blogPost.isLiked = false;
+      }
+    });
     e.target.src = "../assets/icons/general/heart.svg";
   }
-  // Update likedPosts value on localServer.
-  localStorage.setItem("likedPosts", JSON.stringify(likedPosts));
+
+  // // Update local storage with isLiked changes
+  localStorage.setItem("blogPostsArray", JSON.stringify(blogPosts));
 };
 
-// CREATE BLOGPOSTS
-const renderBlogPosts = (blogPostArray) => {
-  blogPostArray.forEach((blogPost) => {
+// RENDER BLOGPOSTS
+const renderBlogPosts = (blogPosts) => {
+  blogPosts.forEach((blogPost) => {
     // CREATE BLOG DOM ELEMENTS
     const blogPostContainer = document.createElement("li");
     const blogPostContent = document.createElement("div");
@@ -145,8 +152,8 @@ const renderBlogPosts = (blogPostArray) => {
     const blogPostTitle = document.createElement("h3");
     const blogPostDescription = document.createElement("p");
     const blogPostTools = document.createElement("div");
-    const blogPostHeartButton = document.createElement("button");
-    const blogPostHeartImage = document.createElement("img");
+    const blogPostLikeButton = document.createElement("button");
+    const blogPostLikeImage = document.createElement("img");
     const blogPostShareButton = document.createElement("button");
     const blogPostShareImage = document.createElement("img");
 
@@ -161,8 +168,8 @@ const renderBlogPosts = (blogPostArray) => {
     blogPostContentAImage.append(blogPostImage);
     blogPostContentATitle.append(blogPostTitle);
     blogPostContainer.append(blogPostTools);
-    blogPostTools.append(blogPostHeartButton, blogPostShareButton);
-    blogPostHeartButton.append(blogPostHeartImage);
+    blogPostTools.append(blogPostLikeButton, blogPostShareButton);
+    blogPostLikeButton.append(blogPostLikeImage);
     blogPostShareButton.append(blogPostShareImage);
 
     // ADD CONTENT TO ELEMENT
@@ -181,22 +188,21 @@ const renderBlogPosts = (blogPostArray) => {
     blogPostTitle.classList.add("blog-posts__title");
     blogPostDescription.classList.add("blog-posts__description");
     blogPostTools.classList.add("blog-posts__tools");
-    blogPostHeartButton.classList.add("blog-posts__heart");
+    blogPostLikeButton.classList.add("blog-posts__heart");
     blogPostShareButton.classList.add("blog-posts__share");
 
     // ADD DATA TO ELEMENT
     blogPostContainer.dataset.id = blogPost.id;
 
-    // GET LOCALSTORAGE DATA FOR LIKED
-    // if blogpost has been liked, render heart solid...
-    if (likedPosts[blogPost.id].isLiked) {
-      blogPostHeartButton.classList.add("blog-posts__heart--active");
-      blogPostHeartImage.src = "../assets/icons/general/heart-solid.svg";
+    // CHECK IF ISLIKED ON BLOGPOSTS. SET CORRECT CLASS AND IMAGE
+    if (blogPost.isLiked) {
+      blogPostLikeButton.classList.add("blog-posts__heart--active");
+      blogPostLikeImage.src = "../assets/icons/general/heart-solid.svg";
     } else {
-      blogPostHeartImage.src = "../assets/icons/general/heart.svg";
+      blogPostLikeImage.src = "../assets/icons/general/heart.svg";
     }
 
-    // ADD EVENTLISTENERS TO ELEMENT
-    blogPostHeartButton.addEventListener("click", (e) => likeBlogPost(e));
+    // ADD EVENT LISTNER TO HEART
+    blogPostLikeButton.addEventListener("click", (e) => likeBlogPost(e));
   });
 };
