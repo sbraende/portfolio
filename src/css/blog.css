@@ -63,8 +63,21 @@ body {
   padding: var(--spacing-large) 0;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  gap: var(--spacing-medium);
   color: var(--color-text-medium);
+}
+
+.main-header__title-and-nav-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+}
+
+.main-header__title-container {
+  grid-column: 2/3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .main-header__title {
@@ -72,7 +85,11 @@ body {
 }
 
 .main-header__toggle-button-container {
+  grid-column: 3/4;
   z-index: 1;
+  display: none;
+  justify-content: end;
+  align-items: center;
 }
 
 .main_header__tools-container {
@@ -80,17 +97,35 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: var(--spacing-small);
+  font-family: var(--font-family-DM_Sans);
 }
 
 .tools {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: var(--spacing-xx-small);
+  gap: var(--spacing-x-small);
 }
 
 .tools__button {
   padding: var(--spacing-xx-small);
+}
+
+.tools__sort-select {
+  width: 100%;
+  padding: var(--spacing-x-small);
+  font-family: var(--font-family-DM_Sans);
+  color: var(--color-text-medium);
+}
+
+.tools__title-search {
+  align-self: auto;
+}
+
+.tools__search-input {
+  padding: var(--spacing-x-small);
+  width: 100%;
 }
 
 .blog-posts {
@@ -160,7 +195,7 @@ body {
   background-color: transparent;
 }
 
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 769px) {
   .header {
     width: 100%;
     position: absolute;
@@ -168,10 +203,6 @@ body {
     left: -1000px;
     right: 200px;
     transition: 1s;
-  }
-
-  .main_header__tools-container {
-    flex-direction: column;
   }
 
   .header--active {
@@ -183,5 +214,36 @@ body {
     gap: var(--spacing-large);
     left: 0;
     background-color: var(--color-light);
+  }
+
+  .main-header {
+    gap: var(--spacing-medium);
+  }
+
+  .header__logo-section,
+  .header__navbar-section {
+    width: 100%;
+    padding: 0 var(--spacing-medium);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 2px solid var(--color-light);
+  }
+
+  .tools {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .site-main {
+    gap: var(--spacing-medium);
+  }
+
+  .main-header {
+    padding: var(--spacing-small) 0;
+  }
+
+  .main-header__toggle-button-container {
+    display: flex;
   }
 }
