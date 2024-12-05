@@ -3,6 +3,7 @@ const blogPostsArray = [
   {
     title: "Design Clone - Stabæk Fotball",
     date: new Date(2024, 11, 26),
+    // date: new Date(2024, 11, 26).getTime(),
     thumbnail:
       "../assets/images/blogposts/stabak-fotball/stabak-fotball-thumbnail.webp",
     description:
@@ -43,12 +44,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // EVENT LISTENERS:
 toggleHeaderButton.addEventListener("click", () => toggleHeader());
-sortSelect.addEventListener("change", (event) =>
-  sortBlogPosts(event, blogPostsArray)
-);
+sortSelect.addEventListener("change", (e) => sortBlogPosts(e));
 searchInput.addEventListener("input", () => searchBlogs(blogPostsArray));
 
-// ----- FUNCTIONS ----- //:
+// FUNCTIONS:
 
 // LOCALSTORAGE BLOGPOSTS FUNCTIONS
 const initBlogPosts = () =>
@@ -65,36 +64,31 @@ const storeBlogPosts = (blogPosts) =>
 const toggleHeader = () => headerElement.classList.toggle("header--active");
 
 // SORT BLOGPOST FUNCTION
-const sortBlogPosts = (event, blogPostsArray) => {
+const sortBlogPosts = (e) => {
+  const blogPosts = getBlogPosts();
+
   // Clear rendered blogposts.
   blogPostsElement.textContent = "";
 
-  // Based on userOption, returns sorted array:
   let sortedArray;
-  if (event.target.value === "newest-first") {
-    sortedArray = blogPostsArray.sort(
-      (a, b) => b.date.getTime() - a.date.getTime()
+  if (e.target.value === "newest-first") {
+    // Date.parse is used convert dateString into milliseconds.
+    sortedArray = blogPosts.sort(
+      (a, b) => Date.parse(b.date) - Date.parse(a.date)
     );
-  } else if (event.target.value === "oldest-first") {
-    sortedArray = blogPostsArray.sort(
-      (a, b) => a.date.getTime() - b.date.getTime()
+  } else if (e.target.value === "oldest-first") {
+    sortedArray = blogPosts.sort(
+      (a, b) => Date.parse(a.date) - Date.parse(b.date)
     );
-  } else if (event.target.value === "shortest-first") {
-    sortedArray = blogPostsArray.sort(
-      (a, b) => a.readLengthMin - b.readLengthMin
-    );
-  } else if (event.target.value === "longest-first") {
-    sortedArray = blogPostsArray.sort(
-      (a, b) => b.readLengthMin - a.readLengthMin
-    );
-  } else if (event.target.value === "most-liked") {
-    // TODO: Probably want to fix this blogPostArray properly. Function for updateing Array?
-    // blogPostsArray.forEach((blogPost) => {
-    //   console.log(Number(blogPost.isLiked));
-    //   console.log(JSON.parse(localStorage.getItem("likedPosts")));
-    // });
-    // sortedArray = blogPostsArray.sort((a, b) => b.isLiked - a.isLiked);
+  } else if (e.target.value === "shortest-first") {
+    sortedArray = blogPosts.sort((a, b) => a.readLengthMin - b.readLengthMin);
+  } else if (e.target.value === "longest-first") {
+    sortedArray = blogPosts.sort((a, b) => b.readLengthMin - a.readLengthMin);
   }
+
+  // else if (e.target.value === "most-liked") {
+  //   sortedArray = blogPosts;
+  // }
   renderBlogPosts(sortedArray);
 };
 
@@ -126,8 +120,8 @@ const likeBlogPost = (e) => {
   e.currentTarget.classList.toggle("blog-posts__heart--active");
 
   if (e.currentTarget.classList.contains("blog-posts__heart--active")) {
-    // Update blogPost with new isLiked value and toggle image.
-    // Right index of blogPost (array) is fund using matching ids.
+    // Toggle isLiked and liked Image
+    // Index of blogPost (array) is found using matching ids
     blogPosts[
       blogPosts.findIndex((blogpost) => blogpost.id === currentBlogPostsId)
     ].isLiked = true;
@@ -139,6 +133,7 @@ const likeBlogPost = (e) => {
     e.target.src = "../assets/icons/general/heart.svg";
   }
 
+  // Update localserver with updated isLiked value
   storeBlogPosts(blogPosts);
 };
 
