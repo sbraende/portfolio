@@ -51,10 +51,15 @@ searchInput.addEventListener("input", () => searchBlogs(blogPostsArray));
 
 // ----- FUNCTIONS ----- //:
 
-// GET/SET BLOGPOSTS FUNCTION
+// LOCALSTORAGE BLOGPOSTS FUNCTIONS
+// const initBlogPosts = () =>
+
 const getBlogPosts = () =>
   JSON.parse(localStorage.getItem("blogPostsArray")) ||
   localStorage.setItem("blogPostsArray", JSON.stringify(blogPostsArray));
+
+const storeBlogPosts = (blogPosts) =>
+  localStorage.setItem("blogPostsArray", JSON.stringify(blogPosts));
 
 // TOGGLE HEADER
 const toggleHeader = () => headerElement.classList.toggle("header--active");
@@ -84,11 +89,11 @@ const sortBlogPosts = (event, blogPostsArray) => {
     );
   } else if (event.target.value === "most-liked") {
     // TODO: Probably want to fix this blogPostArray properly. Function for updateing Array?
-    blogPostsArray.forEach((blogPost) => {
-      console.log(Number(blogPost.isLiked));
-      console.log(JSON.parse(localStorage.getItem("likedPosts")));
-    });
-    sortedArray = blogPostsArray.sort((a, b) => b.isLiked - a.isLiked);
+    // blogPostsArray.forEach((blogPost) => {
+    //   console.log(Number(blogPost.isLiked));
+    //   console.log(JSON.parse(localStorage.getItem("likedPosts")));
+    // });
+    // sortedArray = blogPostsArray.sort((a, b) => b.isLiked - a.isLiked);
   }
   renderBlogPosts(sortedArray);
 };
@@ -121,23 +126,20 @@ const likeBlogPost = (e) => {
   e.currentTarget.classList.toggle("blog-posts__heart--active");
 
   if (e.currentTarget.classList.contains("blog-posts__heart--active")) {
-    blogPosts.forEach((blogPost) => {
-      if (blogPost.id === currentBlogPostsId) {
-        blogPost.isLiked = true;
-      }
-    });
+    // Update blogPost with new isLiked value and toggle image.
+    // Right index of blogPost (array) is fund using matching ids.
+    blogPosts[
+      blogPosts.findIndex((blogpost) => blogpost.id === currentBlogPostsId)
+    ].isLiked = true;
     e.target.src = "../assets/icons/general/heart-solid.svg";
   } else {
-    blogPosts.forEach((blogPost) => {
-      if (blogPost.id === currentBlogPostsId) {
-        blogPost.isLiked = false;
-      }
-    });
+    blogPosts[
+      blogPosts.findIndex((blogpost) => blogpost.id === currentBlogPostsId)
+    ].isLiked = false;
     e.target.src = "../assets/icons/general/heart.svg";
   }
 
-  // // Update local storage with isLiked changes
-  localStorage.setItem("blogPostsArray", JSON.stringify(blogPosts));
+  storeBlogPosts(blogPosts);
 };
 
 // RENDER BLOGPOSTS
