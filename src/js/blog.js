@@ -36,22 +36,20 @@ const sortSelect = document.querySelector(".tools__sort-select");
 const searchInput = document.querySelector(".tools__search-input");
 const blogPostsElement = document.querySelector(".blog-posts");
 
-// TOGGLE HEADER MOBILE
-console.log(toggleHeaderButton);
-toggleHeaderButton.addEventListener("click", () => {
-  headerElement.classList.toggle("header--active");
-});
-
 // GENERAL FUNCTIONS
 document.addEventListener("DOMContentLoaded", () =>
   renderBlogPosts(blogPostsArray)
 );
 
 // EVENT LISTENERS:
+toggleHeaderButton.addEventListener("click", () => toggleHeader());
 sortSelect.addEventListener("change", (event) =>
   sortBlogPosts(event, blogPostsArray)
 );
 searchInput.addEventListener("input", () => searchBlogs(blogPostsArray));
+
+// FUNTIONS
+const toggleHeader = () => headerElement.classList.toggle("header--active");
 
 // SORT BLOGPOST FUNCTION
 const sortBlogPosts = (event, blogPostsArray) => {
