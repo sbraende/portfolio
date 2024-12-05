@@ -2,29 +2,40 @@
 const blogPostsArray = [
   {
     title: "Design Clone - Stabæk Fotball",
-    date: new Date(2024, 11, 26),
-    // date: new Date(2024, 11, 26).getTime(),
+    date: new Date(2024, 11, 15),
     thumbnail:
       "../assets/images/blogposts/stabak-fotball/stabak-fotball-thumbnail.webp",
     description:
-      "I've been working on a responsive website dedicated to Stabæk Football fans! The goal is to provide an engaging platform to explore matches, stats, and team",
+      "Responsive design clone of the Stabæk Fotball site, built with HTML & CSS.",
     path: "../blogposts/stabak-fotball.html",
     hashtags: "design HTML CSS assignment",
     readLengthMin: 5,
-    isLiked: true,
+    isLiked: false,
     id: "stabak",
   },
   {
     title: "Design Clone - 2048",
-    date: new Date(2024, 11, 21),
+    date: new Date(2024, 10, 4),
     thumbnail: "../assets/images/blogposts/2048/2048-thumbnail.webp",
     description:
-      "This project is a design copy of the popular game 2048, originally created by Gabriele Cirulli. The game features a grid where players slide tiles of numbers to combine them, aiming to reach the 2048 tile.",
+      "Responsive 2048 game clone, styled with HTML & CSS. Inspired by Gabriele Cirulli's original design.",
     path: "../blogposts/2048.html",
     hashtags: "design HTML CSS assignment",
     readLengthMin: 2,
     isLiked: false,
     id: "game2048",
+  },
+  {
+    title: "Speech assistant tablet PWA - J-Speech ",
+    date: new Date(2024, 10, 11),
+    thumbnail: "../assets/images/blogposts/j-speech/j-speech-thumbnail.webp",
+    description:
+      "J Speech Assistant: A Norwegian PWA soundboard designed for tablets to aid communication effectively.",
+    path: "../blogposts/2048.html",
+    hashtags: "personal-project HTML CSS JS Vite PWA",
+    readLengthMin: 10,
+    isLiked: false,
+    id: "jspeech",
   },
 ];
 
