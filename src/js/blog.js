@@ -84,11 +84,11 @@ const sortBlogPosts = (e) => {
     sortedArray = blogPosts.sort((a, b) => a.readLengthMin - b.readLengthMin);
   } else if (e.target.value === "longest-first") {
     sortedArray = blogPosts.sort((a, b) => b.readLengthMin - a.readLengthMin);
+  } else if (e.target.value === "most-liked") {
+    sortedArray = blogPosts.sort((a, b) => {
+      return b.isLiked - a.isLiked;
+    });
   }
-
-  // else if (e.target.value === "most-liked") {
-  //   sortedArray = blogPosts;
-  // }
   renderBlogPosts(sortedArray);
 };
 
