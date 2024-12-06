@@ -176,21 +176,16 @@ main {
 }
 
 @media screen and (max-width: 769px) {
+  main {
+    gap: var(--spacing-medium);
+  }
+
+  .page-header__toggle-button-container {
+    display: flex;
+  }
+
   .tools {
     flex-direction: column;
     align-items: start;
-  }
-
-  .site-main {
-    gap: var(--spacing-medium);
-  }
-
-  .main-header {
-    gap: var(--spacing-medium);
-    padding: var(--spacing-small) 0;
-  }
-
-  .main-header__toggle-button-container {
-    display: flex;
   }
 }

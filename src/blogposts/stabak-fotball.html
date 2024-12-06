@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../css/variables.css">
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/header.css">
-    <link rel="stylesheet" href="../css/blog.css">
+    <link rel="stylesheet" href="../css/blogpost.css">
     <title>SEB--DEV: Stabæk Fotball</title>
 
     <link rel="apple-touch-icon" sizes="180x180" href="../assets/icons/favicon/apple-touch-icon.png">
@@ -32,29 +32,88 @@
             </ul>
         </section>
     </header>
-    <!-- MAIN SECTION -->
-    <main class="site-main">
-        <!-- HEADER SECTION  -->
-        <header class="main-header">
-            <div class="main-header__title-and-nav-container">
-                <div class="main-header__backbutton-container">
-                    <button><img src="../assets/icons/general/chevron-left.svg" alt="Back button"></button>
-                </div>
-                <div class="main-header__title-container">
-                    <h1 class="main-header__title">Design Clone - Stabæk Fotball</h1>
-                </div>
-                <div class="main-header__toggle-button-container">
-                    <button class="main-header__toggle-button">
-                        <img src="../assets/icons/general/menu.svg" alt="menu icon">
-                    </button>
-                </div>
+    <!-- MAIN -->
+    <main>
+        <!-- RETURN SECTION -->
+        <section class="return">
+            <div class="return__button-container">
+                <a href="../html/blog.html"><button class="return__button"><img class="return__image"
+                            src="../assets/icons/general/chevron-left.svg" alt="back button"></button></a>
             </div>
+        </section>
+        <!-- TODO: INSERT MOBILE NAV HERE -->
+
+        <!-- BLOGPOST HEADER SECTION -->
+        <section class="blogpost">
+            <header class="blogpost-header">
+                <!-- Title -->
+                <div class="blogpost-header__title-container">
+                    <h1 class="blogpost-header__title-text page-title">Design Clone - Stabæk Fotball</h1>
+                </div>
+                <!-- Tags -->
+                <ul class="blogpost-header__taglist">
+                    <li><a href="">#HTML</a></li>
+                    <li><a href="">#CSS</a></li>
+                    <li><a href="">#Design</a></li>
+                </ul>
+                <!-- Date and duration -->
+                <div class="blog-posts__details-container">
+                    <section class="blog-posts__details-section-left">
+                        <div class="blog-posts__date-container">
+                            <img class="blog-posts__date-image" src="../assets/icons/general/calendar.svg"
+                                alt="Calendar symbol">
+                            <p class="blog-post__date-text">19. Des. 2024</p>
+                        </div>
+                        <div class="blog-posts__duration-container">
+                            <img class="blog-posts__duration-image" src="../assets/icons/general/clock.svg"
+                                alt="Clock symbol">
+                            <p class="blog-posts__duration-text">2 min</p>
+                        </div>
+                    </section>
+                    <!-- like and share -->
+                    <section class="blog-posts__details-section-right">
+                        <button class="blog-posts__heart"><img src="../assets/icons/general/heart.svg"
+                                alt="heart icon"></button>
+                        <button class="blog-posts__share"><img src="../assets/icons/general/share-android.svg"
+                                alt="share icon"></button>
+                    </section>
+                </div>
+            </header>
+            <!-- BLOGPOST CONTENT SECTION -->
+            <article class="blogpost-content">
+                <figure>
+                    <img class="img-standard" src="../assets/images/blogposts/stabak-fotball/stabak-fotball-1.webp"
+                        alt="">
+                    <figcaption>This is an image caption</caption>
+                </figure>
+                <p class="lead"></p>
+                <h3>This is blog post content</h3>
+                <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed magnam quam perspiciatis, delectus
+                    architecto odit. Reprehenderit vel cumque dignissimos accusantium sunt voluptatem, molestiae
+                    aperiam.
+                    Iureptas perferendis obcaecati nulla quia itaque omnis fugit sed tempore suscipit sunt earum culpa.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed magnam quam perspiciatis, delectus
+                    architecto odit. Reprehenderit vel cumque dignissimos accusantium sunt voluptatem, molestiae
+                    aperiam.
+                    Iureptas perferendis obcaecati nulla quia itaque omnis fugit sed tempore suscipit sunt earum culpa.
+                </p>
+            </article>
+        </section>
+        <!-- TOGGLE SECTION -->
+        <section class="toggle">
+            <div class="toggle-button__container">
+                <button class="toggle-button__toggle-button">
+                    <img src="../assets/icons/general/menu.svg" alt="menu icon">
+                </button>
+            </div>
+        </section>
         </header>
-        <!-- BLOGPOSTS SECTION -->
-        <ul class="blog-posts">
-        </ul>
+
     </main>
-    <script src="../js/blog.js"></script>
+    <script src="../js/blogpost.js"></script>
 </body>
 
 </html>
