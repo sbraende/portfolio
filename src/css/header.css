@@ -1,14 +1,15 @@
 .header {
+  position: sticky;
   height: 100vh;
   display: flex;
-  position: sticky;
   top: 0;
+  left: 0;
   z-index: 1;
 }
 
 .header__logo-section,
 .header__navbar-section {
-  width: 144px;
+  width: 124px;
   display: flex;
   justify-content: center;
   align-items: center;
