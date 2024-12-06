@@ -11,7 +11,7 @@ body {
   font-family: var(--font-family-DM_Mono);
 }
 
-.site-main {
+main {
   padding: 0 var(--spacing-large);
   flex-grow: 1;
   display: flex;
@@ -20,7 +20,7 @@ body {
   gap: var(--spacing-large);
 }
 
-.main-header {
+.page-header {
   width: 100%;
   padding: var(--spacing-large) 0;
   display: flex;
@@ -29,24 +29,24 @@ body {
   color: var(--color-text-medium);
 }
 
-.main-header__title-and-nav-container {
+.page-header__title-and-nav-container {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(3, auto);
 }
 
-.main-header__title-container {
+.page-header__title-container {
   grid-column: 2/3;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.main-header__title {
+.page-header__title {
   font-weight: 400;
 }
 
-.main-header__toggle-button-container {
+.page-header__toggle-button-container {
   grid-column: 3/4;
   z-index: 1;
   display: none;
@@ -54,14 +54,14 @@ body {
   align-items: center;
 }
 
-.main-header__toggle-button {
+.page-header__toggle-button {
   padding: var(--spacing-x-small);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.main_header__tools-container {
+.page_header__tools-container {
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -98,6 +98,7 @@ body {
 }
 
 .blog-posts {
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: var(--spacing-large);
@@ -105,12 +106,12 @@ body {
 }
 
 .blog-posts__container {
+  width: 100%;
   position: relative;
-  padding: var(--spacing-medium) 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-bottom: 2px solid var(--color-light);
+  /* border-bottom: 1px solid var(--color-light); */
   font-family: var(--font-family-DM_Sans);
 }
 
@@ -149,13 +150,27 @@ body {
   font-weight: 200;
 }
 
-.blog-posts__tools {
-  position: absolute;
-  bottom: var(--spacing-small);
-  right: var(--spacing-small);
+.blog-posts__details-container {
+  width: 100%;
+  padding-top: var(--spacing-small);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--color-text-dark);
 }
 
-.blog-posts__tools button {
+.blog-posts__details-section-left {
+  display: flex;
+  gap: var(--spacing-medium);
+}
+
+.blog-posts__date-container,
+.blog-posts__duration-container {
+  display: flex;
+  gap: var(--spacing-small);
+}
+
+.blog-posts__details-section-right button {
   border: none;
   background-color: transparent;
 }

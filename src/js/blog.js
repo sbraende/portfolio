@@ -41,7 +41,7 @@ const blogPostsArray = [
 
 // SELECT ELEMENTS FROM DOM
 const toggleHeaderButton = document.querySelector(
-  ".main-header__toggle-button"
+  ".page-header__toggle-button"
 );
 const headerElement = document.querySelector(".header");
 const sortSelect = document.querySelector(".tools__sort-select");
@@ -151,7 +151,7 @@ const likeBlogPost = (e) => {
 // RENDER BLOGPOSTS
 const renderBlogPosts = (blogPosts) => {
   blogPosts.forEach((blogPost) => {
-    // CREATE BLOG DOM ELEMENTS
+    // CREATE BLOGPOST DOM ELEMENTS
     const blogPostContainer = document.createElement("li");
     const blogPostContent = document.createElement("div");
     const blogPostContentAImage = document.createElement("a");
@@ -159,7 +159,18 @@ const renderBlogPosts = (blogPosts) => {
     const blogPostContentATitle = document.createElement("a");
     const blogPostTitle = document.createElement("h3");
     const blogPostDescription = document.createElement("p");
-    const blogPostTools = document.createElement("div");
+
+    const blogPostDetailsContainer = document.createElement("div");
+
+    const blogPostsDetailsSectionLeft = document.createElement("section");
+    const blogPostDateContainer = document.createElement("div");
+    const blogPostDateImage = document.createElement("img");
+    const blogPostDateText = document.createElement("p");
+    const blogPostDurationContainer = document.createElement("div");
+    const blogPostDurationImage = document.createElement("img");
+    const blogPostDurationText = document.createElement("p");
+
+    const blogPostsDetailsSectionRight = document.createElement("section");
     const blogPostLikeButton = document.createElement("button");
     const blogPostLikeImage = document.createElement("img");
     const blogPostShareButton = document.createElement("button");
@@ -171,14 +182,60 @@ const renderBlogPosts = (blogPosts) => {
     blogPostContent.append(
       blogPostContentAImage,
       blogPostContentATitle,
-      blogPostDescription
+      blogPostDescription,
+      blogPostDetailsContainer
     );
     blogPostContentAImage.append(blogPostImage);
     blogPostContentATitle.append(blogPostTitle);
-    blogPostContainer.append(blogPostTools);
-    blogPostTools.append(blogPostLikeButton, blogPostShareButton);
+
+    blogPostDetailsContainer.append(
+      blogPostsDetailsSectionLeft,
+      blogPostsDetailsSectionRight
+    );
+
+    blogPostsDetailsSectionLeft.append(
+      blogPostDateContainer,
+      blogPostDurationContainer
+    );
+    blogPostDateContainer.append(blogPostDateImage, blogPostDateText);
+    blogPostsDetailsSectionRight.append(
+      blogPostLikeButton,
+      blogPostShareButton
+    );
+    blogPostDurationContainer.append(
+      blogPostDurationImage,
+      blogPostDurationText
+    );
     blogPostLikeButton.append(blogPostLikeImage);
     blogPostShareButton.append(blogPostShareImage);
+
+    // ADD CLASS TO ELEMENT
+    blogPostContainer.classList.add("blog-posts__container");
+    blogPostContent.classList.add("blog-posts__content");
+    blogPostImage.classList.add("blog-posts__image");
+    blogPostTitle.classList.add("blog-posts__title");
+    blogPostDescription.classList.add("blog-posts__description");
+    blogPostDetailsContainer.classList.add("blog-posts__details-container");
+
+    blogPostsDetailsSectionLeft.classList.add(
+      "blog-posts__details-section-left"
+    );
+    blogPostDateContainer.classList.add("blog-posts__date-container");
+    blogPostDateImage.classList.add("blog-posts__date-image");
+    blogPostDateText.classList.add("blog-post__date-text");
+
+    blogPostDurationContainer.classList.add("blog-posts__duration-container");
+    blogPostDurationImage.classList.add("blog-posts__duration-image");
+    blogPostDurationText.classList.add("blog-posts__duration-text");
+
+    blogPostsDetailsSectionRight.classList.add(
+      "blog-posts__details-section-right"
+    );
+    blogPostLikeButton.classList.add("blog-posts__heart");
+    blogPostShareButton.classList.add("blog-posts__share");
+
+    // ADD DATA TO ELEMENT
+    blogPostContainer.dataset.id = blogPost.id;
 
     // ADD CONTENT TO ELEMENT
     blogPostContent.href = "#";
@@ -187,20 +244,11 @@ const renderBlogPosts = (blogPosts) => {
     blogPostContentATitle.href = blogPost.path;
     blogPostTitle.textContent = blogPost.title;
     blogPostDescription.textContent = blogPost.description;
+    blogPostDateImage.src = "../assets/icons/general/calendar.svg";
+    blogPostDateText.textContent = formatDate(blogPost.date);
+    blogPostDurationImage.src = "../assets/icons/general/clock.svg";
+    blogPostDurationText.textContent = blogPost.readLengthMin;
     blogPostShareImage.src = "../assets/icons/general/share-android.svg";
-
-    // ADD CLASS TO ELEMENT
-    blogPostContainer.classList.add("blog-posts__container");
-    blogPostContent.classList.add("blog-posts__content");
-    blogPostImage.classList.add("blog-posts__image");
-    blogPostTitle.classList.add("blog-posts__title");
-    blogPostDescription.classList.add("blog-posts__description");
-    blogPostTools.classList.add("blog-posts__tools");
-    blogPostLikeButton.classList.add("blog-posts__heart");
-    blogPostShareButton.classList.add("blog-posts__share");
-
-    // ADD DATA TO ELEMENT
-    blogPostContainer.dataset.id = blogPost.id;
 
     // CHECK IF ISLIKED ON BLOGPOSTS. SET CORRECT CLASS AND IMAGE
     if (blogPost.isLiked) {
@@ -213,4 +261,15 @@ const renderBlogPosts = (blogPosts) => {
     // ADD EVENT LISTNER TO HEART
     blogPostLikeButton.addEventListener("click", (e) => likeBlogPost(e));
   });
+};
+
+const formatDate = (date) => {
+  const option = {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+  };
+
+  // Convert date string string to Date object, then format it.
+  return new Date(date).toLocaleString("en-GB", option);
 };

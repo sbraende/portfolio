@@ -33,21 +33,21 @@
         </section>
     </header>
     <!-- MAIN SECTION -->
-    <main class="site-main">
+    <main>
         <!-- HEADER SECTION  -->
-        <header class="main-header">
-            <div class="main-header__title-and-nav-container">
-                <div class="main-header__title-container">
-                    <h1 class="main-header__title">Blog</h1>
+        <header class="page-header">
+            <div class="page-header__title-and-nav-container">
+                <div class="page-header__title-container">
+                    <h1 class="page-header__title">Blog</h1>
                 </div>
-                <div class="main-header__toggle-button-container">
-                    <button class="main-header__toggle-button">
+                <div class="page-header__toggle-button-container">
+                    <button class="page-header__toggle-button">
                         <img src="../assets/icons/general/menu.svg" alt="menu icon">
                     </button>
                 </div>
             </div>
             <!-- SORT AND SEARCH TOOLS -->
-            <div class="main_header__tools-container">
+            <div class="page_header__tools-container">
                 <!-- SORT -->
                 <div class="tools tools__sort">
                     <p class="tools__title">Sort:</p>
@@ -67,6 +67,7 @@
                 </div>
             </div>
         </header>
+        <div class="test"></div>
         <!-- BLOGPOSTS SECTION -->
         <ul class="blog-posts">
             <!-- TEMPLATE BLOGPOST -->
@@ -87,12 +88,26 @@
                         fans.
                         It's still a work in progress, but stay tuned—exciting features are on the way!
                     </p>
-                </div>
-                <div class="blog-posts__tools">
-                    <button class="blog-posts__heart"><img src="../assets/icons/general/heart.svg"
-                            alt="heart icon"></button>
-                    <button class="blog-posts__share"><img src="../assets/icons/general/share-android.svg"
-                            alt="share icon"></button>
+                    <div class="blog-posts__details-container">
+                        <section class="blog-posts__details-section-left">
+                            <div class="blog-posts__date-container">
+                                <img class="blog-posts__date-image" src="../assets/icons/general/calendar.svg"
+                                    alt="Calendar symbol">
+                                <p class="blog-post__date-text">19. Des. 2024</p>
+                            </div>
+                            <div class="blog-posts__duration-container">
+                                <img class="blog-posts__duration-image" src="../assets/icons/general/clock.svg"
+                                    alt="Clock symbol">
+                                <p class="blog-posts__duration-text">2 min</p>
+                            </div>
+                        </section>
+                        <section class="blog-posts__details-section-right">
+                            <button class="blog-posts__heart"><img src="../assets/icons/general/heart.svg"
+                                    alt="heart icon"></button>
+                            <button class="blog-posts__share"><img src="../assets/icons/general/share-android.svg"
+                                    alt="share icon"></button>
+                        </section>
+                    </div>
                 </div>
             </li> -->
         </ul>

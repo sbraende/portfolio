@@ -19,7 +19,7 @@ body {
   gap: var(--spacing-large);
 }
 
-.main-header {
+main {
   width: 100%;
   padding: var(--spacing-large) 0;
   display: flex;

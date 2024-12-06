@@ -1,6 +1,7 @@
 .header {
   position: sticky;
   height: 100vh;
+  width: 248px;
   display: flex;
   top: 0;
   left: 0;
@@ -9,7 +10,7 @@
 
 .header__logo-section,
 .header__navbar-section {
-  width: 124px;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
