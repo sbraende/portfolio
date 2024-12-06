@@ -83,7 +83,24 @@ main {
 }
 
 @media screen and (max-width: 769px) {
-  main {
-    gap: var(--spacing-medium);
+  /* TODO: Toggle burger button */
+  .return,
+  .toggle {
+    display: none;
+  }
+
+  .blogpost {
+    padding: var(--spacing-small);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .return,
+  .toggle {
+    display: none;
+  }
+
+  .blogpost {
+    padding: 0;
   }
 }
