@@ -8,6 +8,7 @@
   --color-light: #eaeaea;
   --color-medium: #686868;
   --color-dark: #333333;
+  --color-primary: #2793ff;
 
   /* SPACING */
   --spacing-xx-small: 0.1rem;
@@ -29,6 +30,7 @@
   --font-family-DM_Sans: "DM Sans", sans-serif;
 
   /* BORDER RADIUS */
+  --boarder-radius-x-small: 0.125rem;
   --boarder-radius-small: 0.25rem;
   --boarder-radius-medium: 0.5rem;
 

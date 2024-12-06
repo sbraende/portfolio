@@ -10,7 +10,7 @@ a {
 
 button {
   border: none;
-  border-radius: var(--boarder-radius-small);
+  border-radius: var(--boarder-radius-x-small);
   cursor: pointer;
 }
 

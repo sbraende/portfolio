@@ -24,12 +24,12 @@
 }
 
 .header__navbar li a {
-  color: var(--color-text-medium);
+  color: var(--color-text-dark);
   transition: opacity var(--animated-speed-normal);
 }
 
 .header__navbar li a:hover {
-  opacity: 0.75;
+  color: var(--color-primary);
 }
 
 .header__link--active {

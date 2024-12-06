@@ -2,6 +2,7 @@
 
 /* TEXT */
 .page-title {
+  font-size: 2rem;
   font-family: var(--font-family-DM_Sans);
   font-weight: 400;
   color: var(--color-dark);

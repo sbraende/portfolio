@@ -8,17 +8,16 @@ body {
   height: 100%;
   max-width: 1000px;
   display: flex;
-  font-family: var(--font-family-DM_Mono);
+  font-family: var(--font-family-DM_Sans);
 }
 
 main {
   padding: var(--spacing-large) 0;
   display: flex;
-  color: var(--color-text-medium);
 }
 
 .return,
-.toggle {
+.spacer {
   flex-basis: 20%;
   display: flex;
   justify-content: center;
@@ -33,6 +32,26 @@ main {
   width: 100%;
   display: flex;
   flex-direction: column;
+}
+
+.mobile-header {
+  display: none;
+  width: 100%;
+  padding-bottom: var(--spacing-medium);
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mobile-header__returnButton img {
+  width: 32px;
+}
+
+.mobile-header__menu-button {
+  padding: var(--spacing-x-small);
+}
+
+.mobile-header__menu-button img {
+  width: 24px;
 }
 
 .blogpost-header {
@@ -83,14 +102,17 @@ main {
 }
 
 @media screen and (max-width: 769px) {
-  /* TODO: Toggle burger button */
   .return,
-  .toggle {
+  .spacer {
     display: none;
   }
 
+  .mobile-header {
+    display: flex;
+  }
+
   .blogpost {
-    padding: var(--spacing-small);
+    padding: var(--spacing-large);
   }
 }
 
@@ -101,6 +123,6 @@ main {
   }
 
   .blogpost {
-    padding: 0;
+    padding: var(--spacing-medium);
   }
 }
