@@ -46,6 +46,10 @@ main {
   width: 32px;
 }
 
+.mobile-header__menu-container {
+  z-index: 1;
+}
+
 .mobile-header__menu-button {
   padding: var(--spacing-x-small);
 }

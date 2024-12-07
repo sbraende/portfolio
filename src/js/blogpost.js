@@ -1,11 +1,7 @@
 // SELECT ELEMENTS FROM DOM
-blogPostElement = document.querySelector(".blogpost");
-blogPostTitle = document.querySelector(".blogpost-header__title-text");
-blogPostTagList = document.querySelector(".blogpost-header__taglist");
-blogPostDateText = document.querySelector(".blog-post__date-text");
-blogPostDurationText = document.querySelector(".blog-posts__duration-text");
-blogPostLikeImage = document.querySelector(".blog-posts__heart img");
-blogPostShare = document.querySelector(".blog-posts__share");
+const blogPostElement = document.querySelector(".blogpost");
+const blogPostContentElement = document.querySelector(".blogpost-content");
+const headerElement = document.querySelector(".header");
 
 // ON DOM CONTENT LOAD
 document.addEventListener("DOMContentLoaded", () => renderDynamicElements());
@@ -26,6 +22,12 @@ const getCurrentBlogPost = (blogposts) =>
     )
   ];
 
+const storeBlogPosts = (blogPosts) =>
+  localStorage.setItem("blogPostsArray", JSON.stringify(blogPosts));
+
+// TOGGLE HEADER
+const toggleHeader = () => headerElement.classList.toggle("header--active");
+
 // CONTENT FORMATIING FUNCTIONS
 const formatTags = (tagsString) =>
   tagsString
@@ -33,27 +35,261 @@ const formatTags = (tagsString) =>
     .map((tag) => `#${tag}`)
     .join(" ");
 
+// CREATE HTML ELEMENT FUNCTION
+const createHTMLElement = (tag, className, attributes = {}, parent = null) => {
+  const element = document.createElement(tag);
+  if (className) {
+    // Multiple classes functionality
+    classNameArray = className.split(" ");
+    if (classNameArray.length > 1) {
+      classNameArray.forEach((className) => element.classList.add(className));
+    } else {
+      element.classList.add(className);
+    }
+  }
+
+  for (let key in attributes) {
+    element.setAttribute(key, attributes[key]);
+  }
+
+  if (parent) {
+    parent.append(element);
+  }
+
+  return element;
+};
+
+// FORMAT DATE FOR RENDER
+const formatDate = (date) => {
+  const option = {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+  };
+  // Convert date string string to Date object, then format it.
+  return new Date(date).toLocaleString("en-GB", option);
+};
+
+// LIKE POST FUNCTION
+const likeBlogPost = (e, currentBlogPost) => {
+  // Get latest blogPosts from localstorage
+  const blogPosts = getBlogPosts();
+
+  e.currentTarget.classList.toggle("blog-posts__heart--active");
+
+  if (e.currentTarget.classList.contains("blog-posts__heart--active")) {
+    // Toggle isLiked and liked Image
+    // Index of blogPost (array) is found using matching ids
+    blogPosts[
+      blogPosts.findIndex((blogpost) => blogpost.id === currentBlogPost.id)
+    ].isLiked = true;
+    e.target.src = "../assets/icons/general/heart-solid.svg";
+  } else {
+    blogPosts[
+      blogPosts.findIndex((blogpost) => blogpost.id === currentBlogPost.id)
+    ].isLiked = false;
+    e.target.src = "../assets/icons/general/heart.svg";
+  }
+
+  // Update localserver with updated isLiked value
+  storeBlogPosts(blogPosts);
+};
+
 // RENDER PAGE
 const renderDynamicElements = () => {
-  // CREATE BLOGPOST HEADER ELEMENTS
+  // BLOGPOST MOBILE HEADER
+  const mobileHeader = createHTMLElement(
+    "div",
+    "mobile-header",
+    {},
+    blogPostElement
+  );
+  const mobileHeaderReturnContainer = createHTMLElement(
+    "div",
+    "mobile-header__return-container",
+    {},
+    mobileHeader
+  );
+  const mobileHeaderReturnLink = createHTMLElement(
+    "a",
+    "",
+    { href: "../html/blog.html" },
+    mobileHeaderReturnContainer
+  );
+  const mobileHeaderReturnButton = createHTMLElement(
+    "button",
+    "mobile-header__returnButton",
+    {},
+    mobileHeaderReturnLink
+  );
+  const mobileHeaderReturnImage = createHTMLElement(
+    "img",
+    "return__image",
+    { src: "../assets/icons/general/chevron-left.svg", alt: "Back button" },
+    mobileHeaderReturnButton
+  );
+
+  const mobileHeaderMenuContainer = createHTMLElement(
+    "div",
+    "mobile-header__menu-container",
+    {},
+    mobileHeader
+  );
+  const mobileHeaderMenuButton = createHTMLElement(
+    "button",
+    "mobile-header__menu-button",
+    {},
+    mobileHeaderMenuContainer
+  );
+  const mobileHeaderMenuImage = createHTMLElement(
+    "img",
+    "",
+    { src: "../assets/icons/general/menu.svg", alt: "Menu button" },
+    mobileHeaderMenuButton
+  );
+
+  // BLOGPOST HEADER
+  const blogPostHeader = createHTMLElement(
+    "header",
+    "blogpost-header",
+    {},
+    blogPostElement
+  );
+
+  const blogPostTitleContainer = createHTMLElement(
+    "div",
+    "blogpost-header__title-container",
+    {},
+    blogPostHeader
+  );
+  const blogPostTitleText = createHTMLElement(
+    "h1",
+    "blogpost-header__title-text page-title",
+    {},
+    blogPostTitleContainer
+  );
+
+  const blogPostTagList = createHTMLElement(
+    "ul",
+    "blogpost-header__taglist",
+    {},
+    blogPostHeader
+  );
+
+  // DETAILS SECTION
+  const blogPostDetailsContainer = createHTMLElement(
+    "div",
+    "blog-posts__details-container",
+    {},
+    blogPostHeader
+  );
+
+  // DETAILS LEFT SECTION
+  const blogPostsDetailsSectionLeft = createHTMLElement(
+    "section",
+    "blog-posts__details-section-left",
+    {},
+    blogPostDetailsContainer
+  );
+  const blogPostDateContainer = createHTMLElement(
+    "div",
+    "blog-posts__date-container",
+    {},
+    blogPostsDetailsSectionLeft
+  );
+  const blogPostDateImage = createHTMLElement(
+    "img",
+    "blog-posts__date-image",
+    { src: "../assets/icons/general/calendar.svg", alt: "Calendar symbol" },
+    blogPostDateContainer
+  );
+  const blogPostDateText = createHTMLElement(
+    "p",
+    "blog-post__date-text",
+    {},
+    blogPostDateContainer
+  );
+
+  const blogPostDurationContainer = createHTMLElement(
+    "div",
+    "blog-posts__duration-container",
+    {},
+    blogPostsDetailsSectionLeft
+  );
+  const blogPostDurationImage = createHTMLElement(
+    "img",
+    "blog-posts__duration-image",
+    { src: "../assets/icons/general/clock.svg", alt: "Clock symbol" },
+    blogPostDurationContainer
+  );
+  const blogPostDurationText = createHTMLElement(
+    "p",
+    "blog-posts__duration-text",
+    {},
+    blogPostDurationContainer
+  );
+
+  // DETAILS RIGHT SECTION
+  const blogPostsDetailsSectionRight = createHTMLElement(
+    "section",
+    "blog-posts__details-section-right",
+    {},
+    blogPostDetailsContainer
+  );
+  const blogPostLikeButton = createHTMLElement(
+    "button",
+    "blog-posts__heart",
+    {},
+    blogPostsDetailsSectionRight
+  );
+  const blogPostLikeImage = createHTMLElement(
+    "img",
+    "",
+    {
+      src: "../assets/icons/general/heart.svg",
+      alt: "Heart symbol",
+    },
+    blogPostLikeButton
+  );
+  const blogPostShareButton = createHTMLElement(
+    "button",
+    "blog-posts__share",
+    {},
+    blogPostsDetailsSectionRight
+  );
+  const blogPostShareImage = createHTMLElement(
+    "img",
+    "",
+    { src: "../assets/icons/general/share-android.svg", alt: "Share symbol" },
+    blogPostShareButton
+  );
 
   // GET DYNAMIC DATA
   const blogposts = getBlogPosts();
   const currentBlogPost = getCurrentBlogPost(blogposts);
 
   // SET CONTENT
-  blogPostTitle.textContent = currentBlogPost.title;
+  blogPostTitleText.textContent = currentBlogPost.title;
   blogPostTagList.textContent = formatTags(currentBlogPost.tags);
+  blogPostDateText.textContent = formatDate(currentBlogPost.date);
+  blogPostDurationText.textContent = currentBlogPost.readLengthMin;
+
+  // MENU MOBILE TOGGLE
+  mobileHeaderMenuButton.addEventListener("click", () => toggleHeader());
+
+  // CHECK IF ISLIKED ON BLOGPOSTS. SET CORRECT CLASS AND IMAGE
+  if (currentBlogPost.isLiked) {
+    blogPostLikeButton.classList.add("blog-posts__heart--active");
+    blogPostLikeImage.src = "../assets/icons/general/heart-solid.svg";
+  } else {
+    blogPostLikeImage.src = "../assets/icons/general/heart.svg";
+  }
+
+  // ADD EVENT LISTNER TO HEART
+  blogPostLikeButton.addEventListener("click", (e) =>
+    likeBlogPost(e, currentBlogPost)
+  );
+
+  // ARTICLE RE-PARENTING
+  blogPostElement.append(blogPostContentElement);
 };
-
-// RENDER DYNAMIC ELEMENTS PAGE
-
-// Render title, tags, date and duration, like and share from Array.
-
-// Get array from local storage
-
-// Get the right index based on blogpost id data attr.
-
-// fill content
-
-// Add event listener to like image
