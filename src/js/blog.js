@@ -8,7 +8,7 @@ const blogPostsArray = [
     description:
       "Responsive design clone of the Stabæk Fotball site, built with HTML & CSS.",
     path: "../blogposts/stabak-fotball.html",
-    hashtags: "design HTML CSS assignment",
+    tags: "Design HTML CSS Assignment",
     readLengthMin: 5,
     isLiked: false,
     id: "stabak",
@@ -20,7 +20,7 @@ const blogPostsArray = [
     description:
       "Responsive 2048 game clone, styled with HTML & CSS. Inspired by Gabriele Cirulli's original design.",
     path: "../blogposts/2048.html",
-    hashtags: "design HTML CSS assignment",
+    tags: "Design HTML CSS Assignment",
     readLengthMin: 2,
     isLiked: false,
     id: "game2048",
@@ -32,7 +32,7 @@ const blogPostsArray = [
     description:
       "J Speech Assistant: A Norwegian PWA soundboard designed for tablets to aid communication effectively.",
     path: "../blogposts/2048.html",
-    hashtags: "personal-project HTML CSS JS Vite PWA",
+    tags: "personal-project HTML CSS JS Vite PWA",
     readLengthMin: 10,
     isLiked: false,
     id: "jspeech",
