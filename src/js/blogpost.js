@@ -35,6 +35,9 @@ const formatTags = (tagsString) =>
 
 // RENDER PAGE
 const renderDynamicElements = () => {
+  // CREATE BLOGPOST HEADER ELEMENTS
+
+  // GET DYNAMIC DATA
   const blogposts = getBlogPosts();
   const currentBlogPost = getCurrentBlogPost(blogposts);
 
