@@ -31,7 +31,7 @@ const blogPostsArray = [
     thumbnail: "../assets/images/blogposts/j-speech/j-speech-thumbnail.webp",
     description:
       "J Speech Assistant: A Norwegian PWA soundboard designed for tablets to aid communication effectively.",
-    path: "../blogposts/2048.html",
+    path: "../blogposts/j-speech.html",
     tags: "personal-project HTML CSS JS Vite PWA",
     readLengthMin: 10,
     isLiked: false,
