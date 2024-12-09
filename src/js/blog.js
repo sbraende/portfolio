@@ -73,8 +73,6 @@ const storeBlogPosts = (blogPosts) =>
 
 // === CORE LOGIC FUNCTIONS ===
 const toggleHeader = () => {
-  console.log("button pushed");
-
   headerElement.classList.toggle("header--active");
 };
 

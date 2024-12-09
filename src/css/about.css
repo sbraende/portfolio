@@ -1,4 +1,5 @@
 html {
+  height: 100%;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -19,16 +20,17 @@ main {
 }
 
 .mobile-header {
-  /* display: flex; */
   padding: var(--spacing-medium);
-  flex-direction: column;
-  align-items: flex-end;
+  justify-content: end;
 }
 
 .about {
+  flex-grow: 1;
   padding: 0 var(--spacing-x-large);
+
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   gap: var(--spacing-medium);
   text-align: center;
@@ -40,4 +42,10 @@ main {
 
 .about__social-image {
   width: 30px;
+}
+
+@media screen and (max-width: 769px) {
+  .about {
+    justify-content: start;
+  }
 }

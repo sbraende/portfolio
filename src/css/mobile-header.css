@@ -22,3 +22,9 @@
 .mobile-header__menu-button img {
   width: 24px;
 }
+
+@media screen and (max-width: 769px) {
+  .mobile-header {
+    display: flex;
+  }
+}
