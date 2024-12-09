@@ -14,7 +14,6 @@ body {
 main {
   padding: var(--spacing-medium) 0;
   display: flex;
-  flex-direction: column;
 }
 
 .return,
