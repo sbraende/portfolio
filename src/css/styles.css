@@ -1,11 +1,23 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
 
 /* TEXT */
-.page-title {
-  font-size: 2rem;
+h1 {
+  font-size: var(--font-size-x-large);
   font-family: var(--font-family-DM_Sans);
   font-weight: 400;
   color: var(--color-dark);
+}
+
+h2 {
+  font-size: var(--font-size-medium);
+  font-family: var(--font-family-DM_Sans);
+  font-weight: 600;
+  color: var(--color-dark);
+}
+
+p {
+  font-family: var(--font-family-DM_Sans);
+  color: var(--color-text-medium);
 }
 
 .lead {
