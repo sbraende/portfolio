@@ -12,8 +12,17 @@ body {
 }
 
 main {
+  width: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
+}
+
+.mobile-header {
+  /* display: flex; */
+  padding: var(--spacing-medium);
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 .about {
