@@ -40,7 +40,7 @@ const createHTMLElement = (tag, className, attributes = {}, parent = null) => {
   const element = document.createElement(tag);
   if (className) {
     // Multiple classes functionality
-    classNameArray = className.split(" ");
+    const classNameArray = className.split(" ");
     if (classNameArray.length > 1) {
       classNameArray.forEach((className) => element.classList.add(className));
     } else {

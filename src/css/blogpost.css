@@ -12,7 +12,7 @@ body {
 }
 
 main {
-  padding: var(--spacing-large) 0;
+  padding: var(--spacing-medium) 0;
   display: flex;
 }
 

@@ -1,4 +1,4 @@
-// BLOGPOSTS KEY DATA ARRAY
+// === CONSTANTS AND DATA ===
 const blogPostsArray = [
   {
     title: "Design Clone - Stabæk Fotball",
@@ -39,7 +39,7 @@ const blogPostsArray = [
   },
 ];
 
-// SELECT ELEMENTS FROM DOM
+// === DOM SELECTORS ===
 const toggleHeaderButton = document.querySelector(
   ".page-header__toggle-button"
 );
@@ -48,19 +48,19 @@ const sortSelect = document.querySelector(".tools__sort-select");
 const searchInput = document.querySelector(".tools__search-input");
 const blogPostsElement = document.querySelector(".blog-posts");
 
-// ON DOM CONTENT LOAD
-document.addEventListener("DOMContentLoaded", () => {
-  renderBlogPosts(initBlogPosts());
-});
+// === UTILITY FUNCTIONS ===
+// DATE
+const formatDate = (date) => {
+  const option = {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+  };
+  // Convert date string string to Date object, then format it.
+  return new Date(date).toLocaleString("no-NO", option);
+};
 
-// EVENT LISTENERS:
-toggleHeaderButton.addEventListener("click", () => toggleHeader());
-sortSelect.addEventListener("change", (e) => sortBlogPosts(e));
-searchInput.addEventListener("input", () => searchBlogs(blogPostsArray));
-
-// FUNCTIONS:
-
-// LOCALSTORAGE BLOGPOSTS FUNCTIONS
+// LOCALSERVER
 const initBlogPosts = () =>
   JSON.parse(localStorage.getItem("blogPostsArray")) ||
   (localStorage.setItem("blogPostsArray", JSON.stringify(blogPostsArray)),
@@ -71,10 +71,13 @@ const getBlogPosts = () => JSON.parse(localStorage.getItem("blogPostsArray"));
 const storeBlogPosts = (blogPosts) =>
   localStorage.setItem("blogPostsArray", JSON.stringify(blogPosts));
 
-// TOGGLE HEADER
-const toggleHeader = () => headerElement.classList.toggle("header--active");
+// === CORE LOGIC FUNCTIONS ===
+const toggleHeader = () => {
+  console.log("button pushed");
 
-// SORT BLOGPOST FUNCTION
+  headerElement.classList.toggle("header--active");
+};
+
 const sortBlogPosts = (e) => {
   const blogPosts = getBlogPosts();
 
@@ -103,7 +106,6 @@ const sortBlogPosts = (e) => {
   renderBlogPosts(sortedArray);
 };
 
-// SEARCH FUNCTION
 const searchBlogs = (blogPostsArray) => {
   // Clear rendered blogposts
   blogPostsElement.textContent = "";
@@ -119,7 +121,6 @@ const searchBlogs = (blogPostsArray) => {
   renderBlogPosts(filteredArray);
 };
 
-// LIKE POST FUNCTION
 const likeBlogPost = (e) => {
   // Get latest blogPosts from localstorage
   const blogPosts = getBlogPosts();
@@ -263,13 +264,12 @@ const renderBlogPosts = (blogPosts) => {
   });
 };
 
-const formatDate = (date) => {
-  const option = {
-    day: "numeric",
-    month: "short",
-    year: "numeric",
-  };
+// === EVENT LISTENERS ===
+toggleHeaderButton.addEventListener("click", () => toggleHeader());
+sortSelect.addEventListener("change", (e) => sortBlogPosts(e));
+searchInput.addEventListener("input", () => searchBlogs(blogPostsArray));
 
-  // Convert date string string to Date object, then format it.
-  return new Date(date).toLocaleString("en-GB", option);
-};
+// === INITIALIZATION ===
+document.addEventListener("DOMContentLoaded", () => {
+  renderBlogPosts(initBlogPosts());
+});
