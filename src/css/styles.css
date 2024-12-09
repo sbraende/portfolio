@@ -15,6 +15,10 @@ h2 {
   color: var(--color-dark);
 }
 
+h6 {
+  font-size: inherit;
+}
+
 p {
   font-family: var(--font-family-DM_Sans);
   color: var(--color-text-medium);
