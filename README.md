@@ -6,6 +6,8 @@ This project is a student assignment for Høyskolen Kristiania, showcasing my sk
 
 **Published website:** [Visit My Portfolio](https://sbraende-homepage.netlify.app/)
 
+(./src/assets/images/screenshots/screenshot.png)
+
 ## Features
 
 - **Sort and Search Functionality:** Quickly find blog posts..
