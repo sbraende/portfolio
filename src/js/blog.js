@@ -147,6 +147,12 @@ const likeBlogPost = (e) => {
   storeBlogPosts(blogPosts);
 };
 
+const shareBlogPost = (e, blogPost) => {
+  // TODO: Implement shareBlogPost funciton. Need to string format site.URL with blogpost.path
+  console.log(blogPost.path);
+  navigator.clipboard.writeText(blogPost.path);
+};
+
 // RENDER BLOGPOSTS
 const renderBlogPosts = (blogPosts) => {
   blogPosts.forEach((blogPost) => {
@@ -257,8 +263,11 @@ const renderBlogPosts = (blogPosts) => {
       blogPostLikeImage.src = "../assets/icons/general/heart.svg";
     }
 
-    // ADD EVENT LISTNER TO HEART
+    // BLOGPOST EVENT LISTENERS
     blogPostLikeButton.addEventListener("click", (e) => likeBlogPost(e));
+    blogPostShareButton.addEventListener("click", (e) =>
+      shareBlogPost(e, blogPost)
+    );
   });
 };
 
