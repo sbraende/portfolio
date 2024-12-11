@@ -159,7 +159,6 @@ const searchBlogs = (blogPostsArray) => {
 };
 
 const likeBlogPost = (e) => {
-  // Get latest blogPosts from localstorage
   const blogPosts = getBlogPosts();
 
   // Get id for currentBlogPost
@@ -187,9 +186,7 @@ const likeBlogPost = (e) => {
 };
 
 const shareBlogPost = (e, blogPost) => {
-  // TODO: Implement shareBlogPost funciton. Need to string format site.URL with blogpost.path
-  console.log(blogPost.path);
-  navigator.clipboard.writeText(blogPost.path);
+  // TODO: Implement feature
 };
 
 // RENDER BLOGPOSTS

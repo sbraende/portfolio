@@ -40,9 +40,6 @@ This project benefited from the assistance of several resources:
   - Assisted with the `initBlogPosts()` function using the comma operator to return the last operand's value.
   - Suggested enhancements for `createHTMLElement()` in `blogpost.js` to accept attribute objects as parameters.
   - Optimized `formatTags()` in `blogpost.js` by condensing it using method chaining and the .map() method.
-  - Provided guidance for using `.then` and `.catch` methods in the clipboard-sharing functionality.
-- [W3Schools](https://www.w3schools.com/howto/)
-  - Used for the "copy to clipboard" functionality.
 
 ## Resources
 
