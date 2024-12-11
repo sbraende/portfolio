@@ -1,8 +1,34 @@
 // === CONSTANTS AND DATA ===
 const blogPostsArray = [
   {
+    title: "Norway fun facts Quiz",
+    date: new Date(2024, 11, 10),
+    thumbnail:
+      "../assets/images/blogposts/norway-quiz/norway-quiz-thumbnail.webp",
+    description:
+      "Interactive quiz about Norwegian culture, built with responsive HTML, CSS, and JS.",
+    path: "../blogposts/norway-quiz.html",
+    tags: "Design HTML CSS JavaScript Assignment",
+    readLengthMin: 6,
+    isLiked: false,
+    id: "norway-quiz",
+  },
+  {
+    title: "Components Viewer",
+    date: new Date(2024, 11, 3),
+    thumbnail:
+      "../assets/images/blogposts/stabak-fotball/stabak-fotball-thumbnail.webp",
+    description:
+      "Showcase of 8 UI components and states, built with responsive HTML, CSS, and JS.",
+    path: "../blogposts/stabak-fotball.html",
+    tags: "Design HTML CSS Assignment",
+    readLengthMin: 5,
+    isLiked: false,
+    id: "stabak",
+  },
+  {
     title: "Design Clone - Stabæk Fotball",
-    date: new Date(2024, 11, 15),
+    date: new Date(2024, 10, 15),
     thumbnail:
       "../assets/images/blogposts/stabak-fotball/stabak-fotball-thumbnail.webp",
     description:
@@ -14,8 +40,20 @@ const blogPostsArray = [
     id: "stabak",
   },
   {
-    title: "Design Clone - 2048",
-    date: new Date(2024, 10, 4),
+    title: "Beats Solo - Design Clone",
+    date: new Date(2024, 10, 8),
+    thumbnail: "../assets/images/blogposts/2048/2048-thumbnail.webp",
+    description:
+      "Responsive design clone of the Beats Solo 4 product page, built with HTML & CSS.",
+    path: "../blogposts/2048.html",
+    tags: "Design HTML CSS Assignment",
+    readLengthMin: 2,
+    isLiked: false,
+    id: "game2048",
+  },
+  {
+    title: "2048 - Design Clone",
+    date: new Date(2024, 9, 4),
     thumbnail: "../assets/images/blogposts/2048/2048-thumbnail.webp",
     description:
       "Responsive 2048 game clone, styled with HTML & CSS. Inspired by Gabriele Cirulli's original design.",
@@ -26,8 +64,8 @@ const blogPostsArray = [
     id: "game2048",
   },
   {
-    title: "Speech assistant tablet PWA - J-Speech ",
-    date: new Date(2024, 10, 11),
+    title: "J-Speech - Speech Assistant",
+    date: new Date(2024, 9, 11),
     thumbnail: "../assets/images/blogposts/j-speech/j-speech-thumbnail.webp",
     description:
       "J Speech Assistant: A Norwegian PWA soundboard designed for tablets to aid communication effectively.",
@@ -155,7 +193,12 @@ const shareBlogPost = (e, blogPost) => {
 
 // RENDER BLOGPOSTS
 const renderBlogPosts = (blogPosts) => {
-  blogPosts.forEach((blogPost) => {
+  // SORT BLOGS BY NEWEST FIRST
+  const sortedBlogPosts = blogPosts.sort(
+    (a, b) => Date.parse(b.date) - Date.parse(a.date)
+  );
+
+  sortedBlogPosts.forEach((blogPost) => {
     // CREATE BLOGPOST DOM ELEMENTS
     const blogPostContainer = document.createElement("li");
     const blogPostContent = document.createElement("div");

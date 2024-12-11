@@ -127,7 +127,8 @@ main {
   width: 160px;
   height: auto;
   padding-bottom: var(--spacing-small);
-  border-radius: var(--boarder-radius-small);
+  /* border-radius: var(--boarder-radius-small); */
+  border: 1px solid var(--color-text-light);
 }
 
 .blog-posts__title {
