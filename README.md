@@ -10,7 +10,7 @@ This project is a student assignment for Høyskolen Kristiania, showcasing my sk
 
 ## Features
 
-- **Sort and Search Functionality:** Quickly find blog posts..
+- **Sort and Search Functionality:** Quickly find blog posts.
 - **Like and Share Features:** Engage with blog posts and share them easily.
 - **Responsive Design:** Optimized for seamless viewing on desktop and mobile devices.
 - **Vanilla HTML, CSS, and JavaScript:**: Built without external frameworks for simplicity and performance.
@@ -43,6 +43,15 @@ This project benefited from the assistance of several resources:
   - Provided guidance for using `.then` and `.catch` methods in the clipboard-sharing functionality.
 - [W3Schools](https://www.w3schools.com/howto/)
   - Used for the "copy to clipboard" functionality.
+
+## Resources
+
+- [Favicon.io](https://favicon.io/)
+  - Used for creating favicon.
+- [Iconoir](https://iconoir.com/)
+  - For icons.
+- [SimpleIcons](https://simpleicons.org/)
+  - Socialmedia logo icons.
 
 ## License
 
