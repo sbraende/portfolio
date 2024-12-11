@@ -27,7 +27,7 @@ const blogPostsArray = [
     id: "components-viewer",
   },
   {
-    title: "Design Clone - Stabæk Fotball",
+    title: "Stabæk Fotball - Design Clone",
     date: new Date(2024, 10, 15),
     thumbnail:
       "../assets/images/blogposts/stabak-fotball/stabak-fotball-thumbnail.webp",
