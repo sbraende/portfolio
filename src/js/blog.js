@@ -17,14 +17,14 @@ const blogPostsArray = [
     title: "Components Viewer",
     date: new Date(2024, 11, 3),
     thumbnail:
-      "../assets/images/blogposts/stabak-fotball/stabak-fotball-thumbnail.webp",
+      "../assets/images/blogposts/components-viewer/components-viewer-thumbnail.webp",
     description:
       "Showcase of 8 UI components and states, built with responsive HTML, CSS, and JS.",
-    path: "../blogposts/stabak-fotball.html",
-    tags: "Design HTML CSS Assignment",
-    readLengthMin: 5,
+    path: "../blogposts/components-viewer.html",
+    tags: "Design HTML CSS JavaScript Assignment",
+    readLengthMin: 3,
     isLiked: false,
-    id: "stabak",
+    id: "components-viewer",
   },
   {
     title: "Design Clone - Stabæk Fotball",
@@ -42,26 +42,15 @@ const blogPostsArray = [
   {
     title: "Beats Solo - Design Clone",
     date: new Date(2024, 10, 8),
-    thumbnail: "../assets/images/blogposts/2048/2048-thumbnail.webp",
+    thumbnail:
+      "../assets/images/blogposts/beats-solo/beats-solo-thumbnail.webp",
     description:
       "Responsive design clone of the Beats Solo 4 product page, built with HTML & CSS.",
-    path: "../blogposts/2048.html",
+    path: "../blogposts/beats-solo.html",
     tags: "Design HTML CSS Assignment",
-    readLengthMin: 2,
+    readLengthMin: 5,
     isLiked: false,
-    id: "game2048",
-  },
-  {
-    title: "2048 - Design Clone",
-    date: new Date(2024, 9, 4),
-    thumbnail: "../assets/images/blogposts/2048/2048-thumbnail.webp",
-    description:
-      "Responsive 2048 game clone, styled with HTML & CSS. Inspired by Gabriele Cirulli's original design.",
-    path: "../blogposts/2048.html",
-    tags: "Design HTML CSS Assignment",
-    readLengthMin: 2,
-    isLiked: false,
-    id: "game2048",
+    id: "beats-solo",
   },
   {
     title: "J-Speech - Speech Assistant",
@@ -70,10 +59,22 @@ const blogPostsArray = [
     description:
       "J Speech Assistant: A Norwegian PWA soundboard designed for tablets to aid communication effectively.",
     path: "../blogposts/j-speech.html",
-    tags: "personal-project HTML CSS JS Vite PWA",
+    tags: "PersonalProject HTML CSS JS Vite PWA",
     readLengthMin: 10,
     isLiked: false,
-    id: "jspeech",
+    id: "j-speech",
+  },
+  {
+    title: "2048 - Design Clone",
+    date: new Date(2024, 9, 4),
+    thumbnail: "../assets/images/blogposts/2048/2048-thumbnail.webp",
+    description:
+      "Responsive 2048 game clone, styled with HTML & CSS. Inspired by Gabriele Cirulli's original design.",
+    path: "../blogposts/game-2048.html",
+    tags: "Design HTML CSS Assignment",
+    readLengthMin: 2,
+    isLiked: false,
+    id: "game2048",
   },
 ];
 
