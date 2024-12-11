@@ -99,7 +99,7 @@ const formatDate = (date) => {
   return new Date(date).toLocaleString("no-NO", option);
 };
 
-// LOCALSERVER
+// LOCALSTORAGE
 const initBlogPosts = () =>
   JSON.parse(localStorage.getItem("blogPostsArray")) ||
   (localStorage.setItem("blogPostsArray", JSON.stringify(blogPostsArray)),
@@ -191,12 +191,7 @@ const shareBlogPost = (e, blogPost) => {
 
 // RENDER BLOGPOSTS
 const renderBlogPosts = (blogPosts) => {
-  // SORT BLOGS BY NEWEST FIRST
-  const sortedBlogPosts = blogPosts.sort(
-    (a, b) => Date.parse(b.date) - Date.parse(a.date)
-  );
-
-  sortedBlogPosts.forEach((blogPost) => {
+  blogPosts.forEach((blogPost) => {
     // CREATE BLOGPOST DOM ELEMENTS
     const blogPostContainer = document.createElement("li");
     const blogPostContent = document.createElement("div");

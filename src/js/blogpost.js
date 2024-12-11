@@ -1,17 +1,10 @@
-// SELECT ELEMENTS FROM DOM
+// === DOM SELECTORS ===
 const blogPostElement = document.querySelector(".blogpost");
 const blogPostContentElement = document.querySelector(".blogpost-content");
 const headerElement = document.querySelector(".header");
 
-// ON DOM CONTENT LOAD
-document.addEventListener("DOMContentLoaded", () => renderDynamicElements());
-
-// LOCALSTORAGE BLOGPOSTS FUNCTIONS
-const initBlogPosts = () =>
-  JSON.parse(localStorage.getItem("blogPostsArray")) ||
-  (localStorage.setItem("blogPostsArray", JSON.stringify(blogPostsArray)),
-  blogPostsArray);
-
+// === UTILITY FUNCTIONS ===
+// LOCALSTORAGE
 const getBlogPosts = () => JSON.parse(localStorage.getItem("blogPostsArray"));
 
 const getCurrentBlogPost = (blogposts) =>
@@ -25,17 +18,7 @@ const getCurrentBlogPost = (blogposts) =>
 const storeBlogPosts = (blogPosts) =>
   localStorage.setItem("blogPostsArray", JSON.stringify(blogPosts));
 
-// TOGGLE HEADER
-const toggleHeader = () => headerElement.classList.toggle("header--active");
-
-// CONTENT FORMATIING FUNCTIONS
-const formatTags = (tagsString) =>
-  tagsString
-    .split(" ")
-    .map((tag) => `#${tag}`)
-    .join(" ");
-
-// CREATE HTML ELEMENT FUNCTION
+// CREATE HTML ELEMENTS
 const createHTMLElement = (tag, className, attributes = {}, parent = null) => {
   const element = document.createElement(tag);
   if (className) {
@@ -59,7 +42,14 @@ const createHTMLElement = (tag, className, attributes = {}, parent = null) => {
   return element;
 };
 
-// FORMAT DATE FOR RENDER
+// FORMAT (hash) TAGS
+const formatTags = (tagsString) =>
+  tagsString
+    .split(" ")
+    .map((tag) => `#${tag}`)
+    .join(" ");
+
+// DATE
 const formatDate = (date) => {
   const option = {
     day: "numeric",
@@ -70,7 +60,9 @@ const formatDate = (date) => {
   return new Date(date).toLocaleString("en-GB", option);
 };
 
-// LIKE POST FUNCTION
+// === CORE LOGIC FUNCTIONS ===
+const toggleHeader = () => headerElement.classList.toggle("header--active");
+
 const likeBlogPost = (e, currentBlogPost) => {
   // Get latest blogPosts from localstorage
   const blogPosts = getBlogPosts();
@@ -95,7 +87,6 @@ const likeBlogPost = (e, currentBlogPost) => {
   storeBlogPosts(blogPosts);
 };
 
-// RENDER PAGE
 const renderDynamicElements = () => {
   // BLOGPOST MOBILE HEADER
   const mobileHeader = createHTMLElement(
@@ -293,3 +284,6 @@ const renderDynamicElements = () => {
   // ARTICLE RE-PARENTING
   blogPostElement.append(blogPostContentElement);
 };
+
+// === INITIALIZATION ===
+document.addEventListener("DOMContentLoaded", () => renderDynamicElements());
