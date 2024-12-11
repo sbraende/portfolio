@@ -1,3 +1,5 @@
+/* MAIN */
+
 html {
   height: 100%;
   width: 100%;
@@ -24,6 +26,8 @@ main {
   justify-content: end;
 }
 
+/* ABOUT */
+
 .about {
   flex-grow: 1;
   padding: 0 var(--spacing-x-large);
@@ -43,6 +47,8 @@ main {
 .about__social-image {
   width: 30px;
 }
+
+/* RESPONSIVE DESIGN */
 
 @media screen and (max-width: 769px) {
   .about {

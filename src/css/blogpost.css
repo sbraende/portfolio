@@ -1,3 +1,5 @@
+/* MAIN */
+
 html {
   width: 100%;
   display: flex;
@@ -15,6 +17,8 @@ main {
   padding: var(--spacing-medium) 0;
   display: flex;
 }
+
+/* BLOGPOST */
 
 .return,
 .spacer {
@@ -80,6 +84,8 @@ main {
   flex-direction: column;
   gap: var(--spacing-medium);
 }
+
+/* RESPONSIVE DESIGN */
 
 @media screen and (max-width: 769px) {
   .return,

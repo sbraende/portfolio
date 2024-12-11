@@ -1,3 +1,4 @@
+/* MAIN */
 html {
   width: 100%;
   display: flex;
@@ -22,6 +23,8 @@ main {
   padding: var(--spacing-medium);
   justify-content: end;
 }
+
+/* RESUME */
 
 .resume {
   padding: var(--spacing-medium) var(--spacing-x-large);
@@ -51,6 +54,8 @@ main {
   flex-direction: column;
   gap: var(--spacing-small);
 }
+
+/* RESPONSIVE DESIGN */
 
 @media screen and (max-width: 769px) {
   .resume {
