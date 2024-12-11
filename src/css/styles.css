@@ -24,23 +24,9 @@ p {
   color: var(--color-text-medium);
 }
 
-.lead {
-}
-
-/* SUBTITLE */
-
-/* TITLE SMALL */
-
-/* QUOTE */
-
-/* LINK */
-
 /* IMAGES */
-
 .img-fullwidth {
-}
-
-.img-overflow {
+  width: 100vw;
 }
 
 .img-standard {

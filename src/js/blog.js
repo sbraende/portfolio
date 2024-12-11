@@ -290,14 +290,18 @@ const renderBlogPosts = (blogPosts) => {
     blogPostContent.href = "#";
     blogPostContentAImage.href = blogPost.path;
     blogPostImage.src = blogPost.thumbnail;
+    blogPostImage.alt = `Thumbnail for ${blogPost.title}`;
     blogPostContentATitle.href = blogPost.path;
     blogPostTitle.textContent = blogPost.title;
     blogPostDescription.textContent = blogPost.description;
     blogPostDateImage.src = "../assets/icons/general/calendar.svg";
+    blogPostDateImage.alt = "Calendar symbol";
     blogPostDateText.textContent = formatDate(blogPost.date);
     blogPostDurationImage.src = "../assets/icons/general/clock.svg";
+    blogPostDurationImage.alt = "Clock symbol";
     blogPostDurationText.textContent = blogPost.readLengthMin;
     blogPostShareImage.src = "../assets/icons/general/share-android.svg";
+    blogPostShareImage.alt = "Share symbol";
 
     // CHECK IF ISLIKED ON BLOGPOSTS. SET CORRECT CLASS AND IMAGE
     if (blogPost.isLiked) {
