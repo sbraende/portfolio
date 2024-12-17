@@ -214,7 +214,7 @@ const renderDynamicElements = () => {
   // SET CONTENT
   document.title = `SEB--DEV: ${currentBlogPost.title}`;
   blogPostTitleText.textContent = currentBlogPost.title;
-  blogPostTagList.textContent = formatTags(currentBlogPost.tags);
+  // blogPostTagList.textContent = formatTags(currentBlogPost.tags);
   blogPostDateText.textContent = formatDate(currentBlogPost.date);
   blogPostDurationText.textContent = `${currentBlogPost.readLengthMin} min`;
 

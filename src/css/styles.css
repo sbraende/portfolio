@@ -9,10 +9,14 @@ h1 {
 }
 
 h2 {
-  font-size: var(--font-size-medium);
+  font-size: 1.3rem;
   font-family: var(--font-family-DM_Sans);
-  font-weight: 600;
+  font-weight: 400;
   color: var(--color-dark);
+}
+
+h3 {
+  font-size: 1.3rem;
 }
 
 h6 {
@@ -27,6 +31,7 @@ p {
 /* IMAGES */
 .img-standard {
   width: 100%;
+  border: 1px solid var(--color-light);
 }
 
 figcaption {
