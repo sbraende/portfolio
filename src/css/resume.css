@@ -57,7 +57,6 @@ main {
 }
 
 /* RESPONSIVE DESIGN */
-
 @media screen and (max-width: 769px) {
   .resume {
     padding: 0 var(--spacing-large);
