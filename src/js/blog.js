@@ -291,7 +291,7 @@ const renderBlogPosts = (blogPosts) => {
     blogPostDateText.textContent = formatDate(blogPost.date);
     blogPostDurationImage.src = "../assets/icons/general/clock.svg";
     blogPostDurationImage.alt = "Clock symbol";
-    blogPostDurationText.textContent = blogPost.readLengthMin;
+    blogPostDurationText.textContent = `${blogPost.readLengthMin} min`;
     blogPostShareImage.src = "../assets/icons/general/share-android.svg";
     blogPostShareImage.alt = "Share symbol";
 

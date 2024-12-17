@@ -2,6 +2,9 @@
 const blogPostElement = document.querySelector(".blogpost");
 const blogPostContentElement = document.querySelector(".blogpost-content");
 const headerElement = document.querySelector(".header");
+const toggleHeaderButton = document.querySelector(
+  ".mobile-header__menu-button"
+);
 
 // === UTILITY FUNCTIONS ===
 // LOCALSTORAGE
@@ -88,57 +91,6 @@ const likeBlogPost = (e, currentBlogPost) => {
 };
 
 const renderDynamicElements = () => {
-  // BLOGPOST MOBILE HEADER
-  const mobileHeader = createHTMLElement(
-    "div",
-    "mobile-header",
-    {},
-    blogPostElement
-  );
-  const mobileHeaderReturnContainer = createHTMLElement(
-    "div",
-    "mobile-header__return-container",
-    {},
-    mobileHeader
-  );
-  const mobileHeaderReturnLink = createHTMLElement(
-    "a",
-    "",
-    { href: "../html/blog.html" },
-    mobileHeaderReturnContainer
-  );
-  const mobileHeaderReturnButton = createHTMLElement(
-    "button",
-    "mobile-header__returnButton",
-    {},
-    mobileHeaderReturnLink
-  );
-  const mobileHeaderReturnImage = createHTMLElement(
-    "img",
-    "return__image",
-    { src: "../assets/icons/general/chevron-left.svg", alt: "Back button" },
-    mobileHeaderReturnButton
-  );
-
-  const mobileHeaderMenuContainer = createHTMLElement(
-    "div",
-    "mobile-header__menu-container",
-    {},
-    mobileHeader
-  );
-  const mobileHeaderMenuButton = createHTMLElement(
-    "button",
-    "mobile-header__menu-button",
-    {},
-    mobileHeaderMenuContainer
-  );
-  const mobileHeaderMenuImage = createHTMLElement(
-    "img",
-    "",
-    { src: "../assets/icons/general/menu.svg", alt: "Menu button" },
-    mobileHeaderMenuButton
-  );
-
   // BLOGPOST HEADER
   const blogPostHeader = createHTMLElement(
     "header",
@@ -260,13 +212,11 @@ const renderDynamicElements = () => {
   const currentBlogPost = getCurrentBlogPost(blogposts);
 
   // SET CONTENT
+  document.title = `SEB--DEV: ${currentBlogPost.title}`;
   blogPostTitleText.textContent = currentBlogPost.title;
   blogPostTagList.textContent = formatTags(currentBlogPost.tags);
   blogPostDateText.textContent = formatDate(currentBlogPost.date);
-  blogPostDurationText.textContent = currentBlogPost.readLengthMin;
-
-  // MENU MOBILE TOGGLE
-  mobileHeaderMenuButton.addEventListener("click", () => toggleHeader());
+  blogPostDurationText.textContent = `${currentBlogPost.readLengthMin} min`;
 
   // CHECK IF ISLIKED ON BLOGPOSTS. SET CORRECT CLASS AND IMAGE
   if (currentBlogPost.isLiked) {
@@ -284,6 +234,9 @@ const renderDynamicElements = () => {
   // ARTICLE RE-PARENTING
   blogPostElement.append(blogPostContentElement);
 };
+
+// === EVENT LISTENERS ===
+toggleHeaderButton.addEventListener("click", () => toggleHeader());
 
 // === INITIALIZATION ===
 document.addEventListener("DOMContentLoaded", () => renderDynamicElements());

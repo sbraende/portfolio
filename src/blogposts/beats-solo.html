@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/mobile-header.css">
     <link rel="stylesheet" href="../css/blogpost.css">
-    <title>SEB--DEV: Beats Solo</title>
+    <title></title>
 
     <link rel="apple-touch-icon" sizes="180x180" href="../assets/icons/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/favicon/favicon-32x32.png">
@@ -22,7 +22,7 @@
     <!-- LOGO AND NAV SIDEBAR -->
     <header class="header">
         <section class="header__logo-section">
-            <img src="../assets/icons/logo/logo.svg" alt="SEB--DEV logo" class="header__logo">
+            <a href="./blog.html"><img src="../assets/icons/logo/logo.svg" alt="SEB--DEV logo" class="header__logo"></a>
         </section>
         <section class="header__navbar-section">
             <ul class="header__navbar">
@@ -33,19 +33,23 @@
             </ul>
         </section>
     </header>
-    <!-- MAIN -->
+
     <main>
-        <!-- RETURN SECTION -->
-        <section class="return">
-            <div class="return__button-container">
-                <a href="../html/blog.html"><button class="return__button"><img class="return__image"
-                            src="../assets/icons/general/chevron-left.svg" alt="Back button"></button></a>
+        <!-- MOBILE HEADER SECTION -->
+        <div class="mobile-header">
+            <div class="mobile-header__menu-container">
+                <button class="mobile-header__menu-button">
+                    <img src="../assets/icons/general/menu.svg" alt="Menu button">
+                </button>
             </div>
-        </section>
+        </div>
+
         <!-- BLOGPOST HEADER SECTION -->
-        <section class="blogpost" data-id="beats-solo">
+        <div class="blogpost" data-id="beats-solo">
+            <!-- HEADER INSERTED WITH JS -->
+
             <!-- BLOGPOST CONTENT SECTION -->
-            <article class="blogpost-content">
+            <div class="blogpost-content">
                 <figure>
                     <!-- <img class="img-standard" src="../assets/images/blogposts/stabak-fotball/stabak-fotball-1.webp" -->
                     <!-- alt=""> -->
@@ -65,12 +69,8 @@
                     aperiam.
                     Iureptas perferendis obcaecati nulla quia itaque omnis fugit sed tempore suscipit sunt earum culpa.
                 </p>
-            </article>
-        </section>
-        <!-- TOGGLE SECTION -->
-        <section class="spacer">
-        </section>
-        </header>
+            </div>
+        </div>
     </main>
     <script src="../js/blogpost.js"></script>
 </body>
