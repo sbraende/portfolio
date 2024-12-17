@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../css/variables.css">
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/mobile-header.css">
     <link rel="stylesheet" href="../css/blog.css">
     <title>SEB--DEV: Blog</title>
 
@@ -32,87 +33,85 @@
             </ul>
         </section>
     </header>
-    <!-- MAIN SECTION -->
+
     <main>
-        <!-- HEADER SECTION  -->
-        <header class="page-header">
-            <div class="page-header__title-and-nav-container">
-                <div class="page-header__title-container">
-                    <a href="./blog.html">
-                        <h1 class="page-header__title page-title">Blog</h1>
-                    </a>
-                </div>
-                <div class="page-header__toggle-button-container">
-                    <button class="page-header__toggle-button">
-                        <img src="../assets/icons/general/menu.svg" alt="menu icon">
-                    </button>
-                </div>
+        <!-- MOBILE HEADER SECTION -->
+        <div class="mobile-header">
+            <div class="mobile-header__menu-container">
+                <button class="mobile-header__menu-button">
+                    <img src="../assets/icons/general/menu.svg" alt="Menu button">
+                </button>
             </div>
-            <!-- SORT AND SEARCH TOOLS -->
-            <div class="page_header__tools-container">
-                <!-- SORT -->
-                <div class="tools tools__sort">
-                    <p class="tools__title">Sort:</p>
-                    <select name="tools__sort-select" id="sort" class="tools__sort-select">
-                        <option value="newest-first">Newest First</option>
-                        <option value="oldest-first">Oldest First</option>
-                        <option value="shortest-first">Shortest Readingtime</option>
-                        <option value="longest-first">Longest Readingtime</option>
-                        <option value="most-liked">Most Liked</option>
-                    </select>
-                </div>
-                <!-- SEARCH -->
-                <div class="tools tools__search">
-                    <p class="tools__title tools__title-search">Search:</p>
-                    <input type="text" name="search" id="search" placeholder="Search titles..."
-                        class="tools__search-input">
-                </div>
-            </div>
-        </header>
-        <div class="test"></div>
-        <!-- BLOGPOSTS SECTION -->
-        <ul class="blog-posts">
-            <!-- TEMPLATE BLOGPOST -->
-            <!-- <li class="blog-posts__container">
-                <div class="blog-posts__content">
-                    <a href="">
-                        <img src="../assets/images/blogposts/stabak-fotball/stabak-fotball-thumbnail.webp"
-                            alt="Stabæk fotball website" class="blog-posts__image">
-                    </a>
-                    <a href="">
-                        <h3 class="blog-posts__title">Design Clone - Stabæk Fotball</h3>
-                    </a>
-                    <p class="blog-posts__description">
-                        I've been working on a responsive website dedicated to Stabæk
-                        Football fans! The goal is to provide an engaging platform to explore matches, stats, and team
-                        updates. From intuitive navigation to dynamic layouts for mobile and desktop, the site ensures a
-                        seamless experience. I'm especially proud of the sleek design and functionality tailored for
-                        fans.
-                        It's still a work in progress, but stay tuned—exciting features are on the way!
-                    </p>
-                    <div class="blog-posts__details-container">
-                        <section class="blog-posts__details-section-left">
-                            <div class="blog-posts__date-container">
-                                <img class="blog-posts__date-image" src="../assets/icons/general/calendar.svg"
-                                    alt="Calendar symbol">
-                                <p class="blog-post__date-text">19. Des. 2024</p>
-                            </div>
-                            <div class="blog-posts__duration-container">
-                                <img class="blog-posts__duration-image" src="../assets/icons/general/clock.svg"
-                                    alt="Clock symbol">
-                                <p class="blog-posts__duration-text">2 min</p>
-                            </div>
-                        </section>
-                        <section class="blog-posts__details-section-right">
-                            <button class="blog-posts__heart"><img src="../assets/icons/general/heart.svg"
-                                    alt="heart icon"></button>
-                            <button class="blog-posts__share"><img src="../assets/icons/general/share-android.svg"
-                                    alt="share icon"></button>
-                        </section>
+        </div>
+
+        <div class="blog">
+            <!-- BLOG HEADER  -->
+            <header class="page-header">
+                <h1 class="page-header__title">Blog</h1>
+                <div class="page_header__tools-container">
+                    <!-- SORT -->
+                    <div class="tools tools__sort">
+                        <p class="tools__title">Sort:</p>
+                        <select name="tools__sort-select" id="sort" class="tools__sort-select">
+                            <option value="newest-first">Newest First</option>
+                            <option value="oldest-first">Oldest First</option>
+                            <option value="shortest-first">Shortest Readingtime</option>
+                            <option value="longest-first">Longest Readingtime</option>
+                            <option value="most-liked">Most Liked</option>
+                        </select>
+                    </div>
+                    <!-- SEARCH -->
+                    <div class="tools tools__search">
+                        <p class="tools__title tools__title-search">Search:</p>
+                        <input type="text" name="search" id="search" placeholder="Search titles..."
+                            class="tools__search-input">
                     </div>
                 </div>
-            </li> -->
-        </ul>
+            </header>
+
+            <ul class="blog-posts">
+                <!-- TEMPLATE BLOGPOST -->
+                <!-- <li class="blog-posts__container">
+                    <div class="blog-posts__content">
+                        <a href="">
+                            <img src="../assets/images/blogposts/stabak-fotball/stabak-fotball-thumbnail.webp"
+                                alt="Stabæk fotball website" class="blog-posts__image">
+                        </a>
+                        <a href="">
+                            <h3 class="blog-posts__title">Design Clone - Stabæk Fotball</h3>
+                        </a>
+                        <p class="blog-posts__description">
+                            I've been working on a responsive website dedicated to Stabæk
+                            Football fans! The goal is to provide an engaging platform to explore matches, stats, and team
+                            updates. From intuitive navigation to dynamic layouts for mobile and desktop, the site ensures a
+                            seamless experience. I'm especially proud of the sleek design and functionality tailored for
+                            fans.
+                            It's still a work in progress, but stay tuned—exciting features are on the way!
+                        </p>
+                        <div class="blog-posts__details-container">
+                            <section class="blog-posts__details-section-left">
+                                <div class="blog-posts__date-container">
+                                    <img class="blog-posts__date-image" src="../assets/icons/general/calendar.svg"
+                                        alt="Calendar symbol">
+                                    <p class="blog-post__date-text">19. Des. 2024</p>
+                                </div>
+                                <div class="blog-posts__duration-container">
+                                    <img class="blog-posts__duration-image" src="../assets/icons/general/clock.svg"
+                                        alt="Clock symbol">
+                                    <p class="blog-posts__duration-text">2 min</p>
+                                </div>
+                            </section>
+                            <section class="blog-posts__details-section-right">
+                                <button class="blog-posts__heart"><img src="../assets/icons/general/heart.svg"
+                                        alt="heart icon"></button>
+                                <button class="blog-posts__share"><img src="../assets/icons/general/share-android.svg"
+                                        alt="share icon"></button>
+                            </section>
+                        </div>
+                    </div>
+                </li> -->
+            </ul>
+        </div>
     </main>
     <script src="../js/blog.js" type="module"></script>
 </body>

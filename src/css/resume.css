@@ -25,8 +25,8 @@ main {
 }
 
 /* RESUME */
-
 .resume {
+  width: 100%;
   padding: var(--spacing-medium) var(--spacing-x-large);
   display: flex;
   flex-direction: column;

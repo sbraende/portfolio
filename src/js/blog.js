@@ -80,7 +80,7 @@ const blogPostsArray = [
 
 // === DOM SELECTORS ===
 const toggleHeaderButton = document.querySelector(
-  ".page-header__toggle-button"
+  ".mobile-header__menu-button"
 );
 const headerElement = document.querySelector(".header");
 const sortSelect = document.querySelector(".tools__sort-select");
