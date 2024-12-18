@@ -28,7 +28,8 @@ main {
 /* BLOG */
 .blog {
   width: 100%;
-  padding: var(--spacing-medium) var(--spacing-x-large);
+  padding: var(--spacing-medium) var(--spacing-x-large) 4rem
+    var(--spacing-x-large);
   display: flex;
   flex-direction: column;
   gap: var(--spacing-medium);
