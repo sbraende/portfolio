@@ -1,0 +1,26 @@
+.site-header {
+  max-width: 680px;
+  padding: var(--spacing-large) var(--spacing-medium);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--spacing-medium);
+}
+
+.site-header__image {
+  max-width: 175px;
+  padding: var(--spacing-large) var(--spacing-medium) var(--spacing-medium) var(--spacing-medium);
+}
+
+.site-header__title {
+  font-size: var(--font-size-large);
+  color: var(--color-x-dark-gray);
+}
+
+.site-header__paragraph {
+  font-size: 1.1rem;
+  font-weight: 450;
+  color: var(--color-dark-gray);
+}

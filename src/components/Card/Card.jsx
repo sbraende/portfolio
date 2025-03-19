@@ -13,7 +13,9 @@ const Card = ({ webpage }) => {
             <a href={webpage.url} target="__blank">
               webpage
             </a>
-            <p>|</p>
+            <p>
+              <b>|</b>
+            </p>
             <a href={webpage.githubUrl} target="__blank">
               github
             </a>

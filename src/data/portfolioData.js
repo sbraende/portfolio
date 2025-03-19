@@ -26,7 +26,7 @@ const portfolioData = [
   },
   {
     id: "jspeech",
-    title: "J-Speech - Speech Assistant",
+    title: "J-Speech Assistant",
     description:
       "J Speech Assistant: A Norwegian PWA soundboard designed for tablets to aid communication effectively.",
     url: "./src/html/blogposts/j-speech.html",

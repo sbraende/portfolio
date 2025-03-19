@@ -5,7 +5,7 @@
   gap: var(--spacing-large);
 }
 
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 480px) {
   .card-list {
     grid-template-columns: repeat(1, 1fr);
   }

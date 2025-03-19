@@ -2,11 +2,11 @@
   /* COLOR */
   --color-primary-white: #fff;
   --color-primary-back: #171717;
-  --color-primary-blue: #6986ff;
 
   --color-light-gray: #f3f3f3;
   --color-medium-gray: #dddddd;
   --color-dark-gray: #6b6b6b;
+  --color-x-dark-gray: #3c3c3c;
 
   /* SPACING */
   --spacing-x-small: 0.25rem;
