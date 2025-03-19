@@ -1,0 +1,9 @@
+.social {
+  padding-top: 1rem;
+  display: flex;
+  gap: var(--spacing-medium);
+}
+
+.social a img {
+  width: 40px;
+}
