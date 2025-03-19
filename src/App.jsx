@@ -1,3 +1,4 @@
+import "./App.css";
 import CardList from "./components/CardList/CardList";
 import portfolioData from "./data/portfolioData";
 
