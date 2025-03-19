@@ -3,6 +3,7 @@ import CardList from "./components/CardList/CardList";
 import portfolioData from "./data/portfolioData";
 import SiteHeader from "./components/SiteHeader/SiteHeader.jsx";
 import Social from "./components/Social/Social.jsx";
+import Footer from "./components/Footer/Footer.jsx";
 
 function App() {
   return (
@@ -14,7 +15,9 @@ function App() {
       <main>
         <CardList portfolioData={portfolioData} />
       </main>
-      <footer></footer>
+      <footer>
+        <Footer />
+      </footer>
     </>
   );
 }
