@@ -1,12 +1,28 @@
 const portfolioData = [
   {
+    id: "starwars",
+    title: "Star Wars Fetch API",
+    description: "Star Wars website to pratice using fetch in JS",
+    url: "https://sbraende-starwars.netlify.app",
+    githubUrl: "https://github.com/sbraende/starwars",
+    thumbnail: "/assets/images/blogposts/star-wars/star-wars-thumbnail.png",
+  },
+  {
+    id: "blog",
+    title: "Personal blog",
+    description: "Personal blog for showcasing my webdev work",
+    url: "https://sbraende-blog.netlify.app",
+    githubUrl: "https://github.com/sbraende/blog",
+    thumbnail: "/assets/images/blogposts/blog/blog-thumbnail.png",
+  },
+  {
     id: "norway-quiz",
     title: "Norway Fun Facts Quiz",
     description:
       "Interactive quiz about Norwegian culture, built with responsive HTML, CSS, and JS.",
     url: "https://sbraende-quiz.netlify.app",
     githubUrl: "https://github.com/sbraende/norway-quiz",
-    thumbnail: "/assets/images/blogposts/norway-quiz/norway-quiz-thumbnail.webp",
+    thumbnail: "/assets/images/blogposts/norway-quiz/norway-quiz-thumbnail.png",
   },
   {
     id: "components-viewer",
@@ -14,7 +30,7 @@ const portfolioData = [
     description: "Showcase of 8 UI components and states, built with responsive HTML, CSS, and JS.",
     url: "https://sbraende-components.netlify.app",
     githubUrl: "https://github.com/sbraende/components-viewer",
-    thumbnail: "/assets/images/blogposts/components-viewer/components-viewer-thumbnail.webp",
+    thumbnail: "/assets/images/blogposts/components-viewer/components-viewer-thumbnail.png",
   },
   {
     id: "stabak-fotball",
@@ -22,7 +38,7 @@ const portfolioData = [
     description: "Responsive design clone of the Stabæk Fotball site, built with HTML & CSS.",
     url: "https://stabak-football-clone.vercel.app",
     githubUrl: "https://github.com/sbraende/stabak-football-clone",
-    thumbnail: "/assets/images/blogposts/stabak-fotball/stabak-fotball-thumbnail.webp",
+    thumbnail: "/assets/images/blogposts/stabak-fotball/stabak-fotball-thumbnail.png",
   },
   {
     id: "jspeech",
@@ -31,7 +47,7 @@ const portfolioData = [
       "J Speech Assistant: A Norwegian PWA soundboard designed for tablets to aid communication effectively.",
     url: "https://j-speech.netlify.app/src/html/favorites.html",
     githubUrl: "https://github.com/sbraende/j-speech-assistant",
-    thumbnail: "/assets/images/blogposts/j-speech/j-speech-thumbnail.webp",
+    thumbnail: "/assets/images/blogposts/j-speech/j-speech-thumbnail.png",
   },
   {
     id: "beats-solo",
@@ -39,7 +55,7 @@ const portfolioData = [
     description: "Responsive design clone of the Beats Solo 4 product page, built with HTML & CSS.",
     url: "https://sbraende-beats-solo.netlify.app",
     githubUrl: "https://github.com/sbraende/beats-solo-clone",
-    thumbnail: "/assets/images/blogposts/beats-solo/beats-solo-screenshot.png",
+    thumbnail: "/assets/images/blogposts/beats-solo/beats-solo-thumbnail.png",
   },
   {
     id: "game-2048",
@@ -48,7 +64,15 @@ const portfolioData = [
       "Responsive 2048 game clone, styled with HTML & CSS. Inspired by Gabriele Cirulli's original design.",
     url: "https://sbraende-2048-clone.netlify.app",
     githubUrl: "https://github.com/sbraende/2048-Clone",
-    thumbnail: "/assets/images/blogposts/2048/2048-thumbnail.webp",
+    thumbnail: "/assets/images/blogposts/2048/2048-thumbnail.png",
+  },
+  {
+    id: "digitaltwin",
+    title: "Digital Twin Home",
+    description: "Digital Twin app made with Python and Unity",
+    url: "https://vimeo.com/manage/videos/879781905",
+    githubUrl: "https://github.com/sbraende/dt-home-hub",
+    thumbnail: "/assets/images/blogposts/digitaltwin/digitaltwin-thumbnail.png",
   },
 ];
 

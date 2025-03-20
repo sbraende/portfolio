@@ -1,6 +1,5 @@
 .card {
   padding-top: var(--spacing-medium);
-  max-width: 250px;
 }
 
 .card__image-container {
