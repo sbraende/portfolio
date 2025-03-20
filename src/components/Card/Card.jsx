@@ -5,7 +5,13 @@ const Card = ({ webpage }) => {
     <>
       <li className="card">
         <div className="card__image-container">
-          <img className="card__image" src={webpage.thumbnail} alt={`${webpage.title} thumbnail`} />
+          <a href={webpage.url} target="__blank">
+            <img
+              className="card__image"
+              src={webpage.thumbnail}
+              alt={`${webpage.title} thumbnail`}
+            />
+          </a>
         </div>
         <div className="card__text-container">
           <h3 className="card__title">{webpage.title}</h3>
