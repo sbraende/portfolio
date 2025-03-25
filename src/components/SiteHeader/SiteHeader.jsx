@@ -8,12 +8,14 @@ const SiteHeader = () => {
         src="/assets/images/profile/profile-picture.jpeg"
         alt="Sebastian Braende profile image"
       />
-      <h1 className="site-header__title">Junior front-end dev | vfx-veteran | fairly nerdy | 🇳🇴</h1>
+      <h2 className="site-header__title">
+        Front-end developer | visual-effects veteran | fairly nerdy | 🇳🇴
+      </h2>
       <p className="site-header__paragraph">
-        Drawing from my background as Head of Lighting, Visual Effects Supervisor, and Senior Visual
-        Effects Artist across commercials, TV, and film, I have extensive experience in creating
-        captivating narratives through imagery. Now, I’m excited to pivot my expertise into the
-        field of frontend and web development.
+        My name is Sebastian Brænde, and I'm a frontend developer with a passion for building
+        engaging web experiences. I previously worked as Department lead of Lighting, Visual Effects
+        Supervisor, and Senior Visual Effects Artist for commercials, TV, and film, bringing stories
+        to life through visuals.
       </p>
     </div>
   );

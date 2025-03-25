@@ -5,7 +5,7 @@ const Card = ({ webpage }) => {
     <>
       <li className="card">
         <div className="card__image-container">
-          <a href={webpage.url} target="__blank">
+          <a href={webpage.url} target="_blank">
             <img
               className="card__image"
               src={webpage.thumbnail}
@@ -16,13 +16,13 @@ const Card = ({ webpage }) => {
         <div className="card__text-container">
           <h3 className="card__title">{webpage.title}</h3>
           <div className="card__links-container">
-            <a href={webpage.url} target="__blank">
+            <a href={webpage.url} target="_blank">
               webpage
             </a>
             <p>
               <b>|</b>
             </p>
-            <a href={webpage.githubUrl} target="__blank">
+            <a href={webpage.githubUrl} target="_blank">
               github
             </a>
           </div>
