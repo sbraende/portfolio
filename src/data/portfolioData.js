@@ -1,5 +1,13 @@
 const portfolioData = [
   {
+    id: "digitaltwin-v02",
+    title: "Digital Twin Home v02 - WIP",
+    description: "Digtial Twin of my Home",
+    url: "https://sbraende-digitaltwin.netlify.app",
+    githubUrl: "https://github.com/sbraende/digital-twin-home",
+    thumbnail: "/assets/images/blogposts/digitaltwin-v02/digitaltwin-v02-thumbnail.png",
+  },
+  {
     id: "starwars",
     title: "Star Wars Fetch API",
     description: "Star Wars website to pratice using fetch in JS",
