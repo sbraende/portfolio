@@ -9,7 +9,7 @@ const SiteHeader = () => {
         alt="Sebastian Braende profile image"
       />
       <h2 className="site-header__title">
-        Front-end developer | visual-effects veteran | fairly nerdy | 🇳🇴
+        Frontend Developer | Visual-Effects Veteran | Fairly nerdy | 🇳🇴
       </h2>
       <p className="site-header__paragraph">
         My name is Sebastian Brænde, and I'm a frontend developer with a passion for building
