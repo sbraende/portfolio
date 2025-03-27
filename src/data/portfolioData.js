@@ -2,7 +2,7 @@ const portfolioData = [
   {
     id: "digitaltwin-v02",
     title: "Digital Twin Home v02 - WIP",
-    description: "Digtial Twin of my Home",
+    description: "Control lights, read temperature built using 3D and web-technologies",
     url: "https://sbraende-digitaltwin.netlify.app",
     githubUrl: "https://github.com/sbraende/digital-twin-home",
     thumbnail: "/assets/images/blogposts/digitaltwin-v02/digitaltwin-v02-thumbnail.png",
@@ -10,7 +10,7 @@ const portfolioData = [
   {
     id: "starwars",
     title: "Star Wars Fetch API",
-    description: "Star Wars website to pratice using fetch in JS",
+    description: "Using SWAPI to practice using asynchronous programming in JavaScript",
     url: "https://sbraende-starwars.netlify.app",
     githubUrl: "https://github.com/sbraende/starwars",
     thumbnail: "/assets/images/blogposts/star-wars/star-wars-thumbnail.png",
@@ -18,7 +18,7 @@ const portfolioData = [
   {
     id: "blog",
     title: "Personal blog",
-    description: "Personal blog for showcasing my webdev work",
+    description: "Blog was created as a test project to showcase my web-dev work",
     url: "https://sbraende-blog.netlify.app",
     githubUrl: "https://github.com/sbraende/blog",
     thumbnail: "/assets/images/blogposts/blog/blog-thumbnail.png",
