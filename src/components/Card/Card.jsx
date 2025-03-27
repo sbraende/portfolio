@@ -15,6 +15,7 @@ const Card = ({ webpage }) => {
         </div>
         <div className="card__text-container">
           <h3 className="card__title">{webpage.title}</h3>
+          <p>{webpage.description}</p>
           <div className="card__links-container">
             <a href={webpage.url} target="_blank">
               webpage
