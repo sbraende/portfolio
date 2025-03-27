@@ -2,7 +2,7 @@ const portfolioData = [
   {
     id: "digitaltwin-v02",
     title: "Digital Twin Home v02 - WIP",
-    description: "Control lights, read temperature built using 3D and web-technologies",
+    description: "Control lights, read temperature etc. Built using 3D and web-technologies",
     url: "https://sbraende-digitaltwin.netlify.app",
     githubUrl: "https://github.com/sbraende/digital-twin-home",
     thumbnail: "/assets/images/blogposts/digitaltwin-v02/digitaltwin-v02-thumbnail.png",
