@@ -1,0 +1,9 @@
+.card__tag {
+  margin-top: var(--spacing-x-small);
+  margin-right: var(--spacing-x-small);
+  padding: var(--spacing-x-small) var(--spacing-small);
+  background-color: var(--color-light-gray);
+  font-size: 0.8rem;
+  display: inline-block;
+  white-space: normal;
+}

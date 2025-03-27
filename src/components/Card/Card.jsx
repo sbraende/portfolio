@@ -1,5 +1,5 @@
+import Tag from "../Tag/Tag";
 import "./Card.css";
-
 const Card = ({ webpage }) => {
   return (
     <>
@@ -27,6 +27,11 @@ const Card = ({ webpage }) => {
               github
             </a>
           </div>
+          <ul className="card__tags-list">
+            {webpage.tags.map((tag) => {
+              return <Tag key={tag}>{tag}</Tag>;
+            })}
+          </ul>
         </div>
       </li>
     </>
