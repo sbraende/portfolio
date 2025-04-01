@@ -6,7 +6,7 @@ const portfolioData = [
     url: "https://sbraende-digitaltwin.netlify.app",
     githubUrl: "https://github.com/sbraende/digital-twin-home",
     thumbnail: "/assets/images/blogposts/digitaltwin-v02/digitaltwin-v02-thumbnail.png",
-    tags: ["Express.js", "Vite", "JavaScript", "CSS", "HTML"],
+    tags: ["Express.js", "three.js", "Vite", "JavaScript", "CSS", "HTML"],
   },
   {
     id: "jspeech",
@@ -17,15 +17,6 @@ const portfolioData = [
     githubUrl: "https://github.com/sbraende/j-speech-assistant",
     thumbnail: "/assets/images/blogposts/j-speech/j-speech-thumbnail.png",
     tags: ["PWA", "Vite", "JavaScript", "CSS", "HTML"],
-  },
-  {
-    id: "starwars",
-    title: "Star Wars Fetch API",
-    description: "Using SWAPI to practice using asynchronous programming in JavaScript",
-    url: "https://sbraende-starwars.netlify.app",
-    githubUrl: "https://github.com/sbraende/starwars",
-    thumbnail: "/assets/images/blogposts/star-wars/star-wars-thumbnail.png",
-    tags: ["Vite", "JavaScript", "CSS", "HTML"],
   },
   {
     id: "blog",
@@ -54,6 +45,15 @@ const portfolioData = [
     githubUrl: "https://github.com/sbraende/dt-home-hub",
     thumbnail: "/assets/images/blogposts/digitaltwin/digitaltwin-thumbnail.png",
     tags: ["Python", "Unity", "Flask", "Raspberry Pi"],
+  },
+  {
+    id: "starwars",
+    title: "Star Wars Fetch API",
+    description: "Using SWAPI to practice using asynchronous programming in JavaScript",
+    url: "https://sbraende-starwars.netlify.app",
+    githubUrl: "https://github.com/sbraende/starwars",
+    thumbnail: "/assets/images/blogposts/star-wars/star-wars-thumbnail.png",
+    tags: ["Vite", "JavaScript", "CSS", "HTML"],
   },
   {
     id: "components-viewer",
