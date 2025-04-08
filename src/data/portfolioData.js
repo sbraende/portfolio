@@ -9,6 +9,15 @@ const portfolioData = [
     tags: ["Express.js", "three.js", "Vite", "JavaScript", "CSS", "HTML"],
   },
   {
+    id: "inventory-system",
+    title: "Pharmacy inventory system",
+    description: "Inventory system created using object-oriented programming",
+    url: "https://sbraende-inventory-system.netlify.app/",
+    githubUrl: "https://github.com/sbraende/pharmacy-inventory-system",
+    thumbnail: "/assets/images/blogposts/inventory-system/inventory-system-thumbnail.png",
+    tags: ["OOP", "Vite", "JavaScript", "CSS", "HTML"],
+  },
+  {
     id: "jspeech",
     title: "J-Speech Assistant",
     description:

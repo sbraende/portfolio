@@ -12,11 +12,10 @@ const SiteHeader = () => {
         Frontend Developer | Visual-Effects Veteran | Fairly nerdy | 🇳🇴
       </h2>
       <p className="site-header__paragraph">
-        My name is Sebastian Brænde, and I'm a frontend developer with a passion for building
-        engaging web experiences. Previously, I worked as a Lighting Department Lead, Visual Effects
-        Supervisor, and Senior Visual Effects Artist for commercials, TV, and film. I hold a
-        bachelor's degree in Animation and a master's degree in Visual Effects, and I love bringing
-        stories to life through visuals.
+        Hi! I'm Sebastian Brænde, a frontend developer passionate about creating engaging web
+        experiences. With a background in visual effects, including roles as Lighting Department
+        Lead and Visual Effects Supervisor, I bring a unique perspective to my work. I love telling
+        stories through both visuals and code, and I'd love to connect!
       </p>
     </div>
   );
