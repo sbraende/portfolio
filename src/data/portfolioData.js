@@ -1,11 +1,23 @@
 const portfolioData = [
   {
+    id: "expense-tracker",
+    title: "Expense tracker",
+    description: "Keep a track of income and expenses using this web app.",
+    url: "https://sbraende-expensetracker.netlify.app",
+    githubUrl: "https://github.com/sbraende/expense-tracker",
+    thumbnail:
+      "/assets/images/blogposts/expense-tracker/expense-tracker-thumbnail.png",
+    tags: ["React", "Vite", "JavaScript", "CSS"],
+  },
+  {
     id: "digitaltwin-v02",
     title: "Digital Twin Home v02 - WIP",
-    description: "Control lights, read temperature etc. Built using 3D and web-technologies",
+    description:
+      "Control lights, read temperature etc. Built using 3D and web-technologies",
     url: "https://sbraende-digitaltwin.netlify.app",
     githubUrl: "https://github.com/sbraende/digital-twin-home",
-    thumbnail: "/assets/images/blogposts/digitaltwin-v02/digitaltwin-v02-thumbnail.png",
+    thumbnail:
+      "/assets/images/blogposts/digitaltwin-v02/digitaltwin-v02-thumbnail.png",
     tags: ["Express.js", "three.js", "Vite", "JavaScript", "CSS", "HTML"],
   },
   {
@@ -14,7 +26,8 @@ const portfolioData = [
     description: "Inventory system created using object-oriented programming",
     url: "https://sbraende-inventory-system.netlify.app/",
     githubUrl: "https://github.com/sbraende/pharmacy-inventory-system",
-    thumbnail: "/assets/images/blogposts/inventory-system/inventory-system-thumbnail.png",
+    thumbnail:
+      "/assets/images/blogposts/inventory-system/inventory-system-thumbnail.png",
     tags: ["OOP", "Vite", "JavaScript", "CSS", "HTML"],
   },
   {
@@ -30,7 +43,8 @@ const portfolioData = [
   {
     id: "blog",
     title: "Personal blog",
-    description: "Blog was created as a test project to showcase my web-dev work",
+    description:
+      "Blog was created as a test project to showcase my web-dev work",
     url: "https://sbraende-blog.netlify.app",
     githubUrl: "https://github.com/sbraende/blog",
     thumbnail: "/assets/images/blogposts/blog/blog-thumbnail.png",
@@ -58,7 +72,8 @@ const portfolioData = [
   {
     id: "starwars",
     title: "Star Wars Fetch API",
-    description: "Using SWAPI to practice using asynchronous programming in JavaScript",
+    description:
+      "Using SWAPI to practice using asynchronous programming in JavaScript",
     url: "https://sbraende-starwars.netlify.app",
     githubUrl: "https://github.com/sbraende/starwars",
     thumbnail: "/assets/images/blogposts/star-wars/star-wars-thumbnail.png",
@@ -67,27 +82,32 @@ const portfolioData = [
   {
     id: "components-viewer",
     title: "Components Viewer",
-    description: "Showcase of 8 UI components and states, built with responsive HTML, CSS, and JS.",
+    description:
+      "Showcase of 8 UI components and states, built with responsive HTML, CSS, and JS.",
     url: "https://sbraende-components.netlify.app",
     githubUrl: "https://github.com/sbraende/components-viewer",
-    thumbnail: "/assets/images/blogposts/components-viewer/components-viewer-thumbnail.png",
+    thumbnail:
+      "/assets/images/blogposts/components-viewer/components-viewer-thumbnail.png",
     tags: ["JavaScript", "CSS", "HTML"],
   },
 
   {
     id: "stabak-fotball",
     title: "Stabæk Fotball - Design Clone",
-    description: "Responsive design clone of the Stabæk Fotball site, built with HTML & CSS.",
+    description:
+      "Responsive design clone of the Stabæk Fotball site, built with HTML & CSS.",
     url: "https://stabak-football-clone.vercel.app",
     githubUrl: "https://github.com/sbraende/stabak-football-clone",
-    thumbnail: "/assets/images/blogposts/stabak-fotball/stabak-fotball-thumbnail.png",
+    thumbnail:
+      "/assets/images/blogposts/stabak-fotball/stabak-fotball-thumbnail.png",
     tags: ["CSS", "HTML"],
   },
 
   {
     id: "beats-solo",
     title: "Beats Solo - Design Clone",
-    description: "Responsive design clone of the Beats Solo 4 product page, built with HTML & CSS.",
+    description:
+      "Responsive design clone of the Beats Solo 4 product page, built with HTML & CSS.",
     url: "https://sbraende-beats-solo.netlify.app",
     githubUrl: "https://github.com/sbraende/beats-solo-clone",
     thumbnail: "/assets/images/blogposts/beats-solo/beats-solo-thumbnail.png",
