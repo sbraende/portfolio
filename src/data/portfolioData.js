@@ -1,5 +1,22 @@
 const portfolioData = [
   {
+    id: "stride-labs",
+    title: "Stride Labs",
+    description: "Webshop featuring natural language AI Search",
+    url: "https://sbraende-stridelabs.netlify.app/",
+    githubUrl: "https://github.com/sbraende/stride-labs",
+    thumbnail: "/assets/images/blogposts/stride-labs/stride-labs-thumbnail.png",
+    tags: [
+      "React",
+      "Gemini",
+      "Firestore",
+      "Firebase Auth",
+      "Vite",
+      "JavaScript",
+      "CSS",
+    ],
+  },
+  {
     id: "expense-tracker",
     title: "Expense tracker",
     description: "Keep a track of income and expenses using this web app.",
