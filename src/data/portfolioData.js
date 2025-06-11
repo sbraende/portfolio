@@ -51,7 +51,7 @@ const portfolioData = [
     id: "jspeech",
     title: "J-Speech Assistant",
     description:
-      "J Speech Assistant: A Norwegian PWA soundboard designed for tablets to aid communication effectively.",
+      "J Speech Assistant: A Norwegian PWA soundboard for tablets that supports communication for people with speech difficulties.",
     url: "https://j-speech.netlify.app/src/html/favorites.html",
     githubUrl: "https://github.com/sbraende/j-speech-assistant",
     thumbnail: "/assets/images/blogposts/j-speech/j-speech-thumbnail.png",
