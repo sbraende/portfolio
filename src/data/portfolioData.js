@@ -1,5 +1,23 @@
 const portfolioData = [
   {
+    id: "strengr",
+    title: "Strengr",
+    description: "A platform that connects players with racket stringers",
+    url: "",
+    githubUrl: "",
+    thumbnail:
+      "/assets/images/blogposts/temp-graphics/temp-graphics-thumbnail.png",
+    tags: [
+      "React",
+      "Tailwind",
+      "Radix",
+      "Supabase",
+      "SQL",
+      "Vite",
+      "JavaScript",
+    ],
+  },
+  {
     id: "stride-labs",
     title: "Stride Labs",
     description: "Webshop featuring natural language AI Search",
@@ -11,6 +29,8 @@ const portfolioData = [
       "Gemini",
       "Firestore",
       "Firebase Auth",
+      "NodeJS",
+      "Heroku",
       "Vite",
       "JavaScript",
       "CSS",

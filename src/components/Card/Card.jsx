@@ -17,15 +17,25 @@ const Card = ({ webpage }) => {
           <h3 className="card__title">{webpage.title}</h3>
           <p>{webpage.description}</p>
           <div className="card__links-container">
-            <a href={webpage.url} target="_blank">
-              webpage
-            </a>
-            <p>
-              <b>|</b>
-            </p>
-            <a href={webpage.githubUrl} target="_blank">
-              github
-            </a>
+            {webpage.url && (
+              <>
+                {" "}
+                <a href={webpage.url} target="_blank">
+                  webpage
+                </a>
+                <p>
+                  <b>|</b>
+                </p>
+              </>
+            )}
+
+            {webpage.githubUrl && (
+              <>
+                <a href={webpage.githubUrl} target="_blank">
+                  github
+                </a>
+              </>
+            )}
           </div>
           <ul className="card__tags-list">
             {webpage.tags.map((tag) => {
