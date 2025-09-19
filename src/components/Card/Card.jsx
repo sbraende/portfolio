@@ -19,18 +19,17 @@ const Card = ({ webpage }) => {
           <div className="card__links-container">
             {webpage.url && (
               <>
-                {" "}
                 <a href={webpage.url} target="_blank">
                   webpage
                 </a>
-                <p>
-                  <b>|</b>
-                </p>
               </>
             )}
 
             {webpage.githubUrl && (
               <>
+                <p>
+                  <b>|</b>
+                </p>
                 <a href={webpage.githubUrl} target="_blank">
                   github
                 </a>

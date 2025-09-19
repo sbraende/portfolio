@@ -2,11 +2,10 @@ const portfolioData = [
   {
     id: "strengr",
     title: "Strengr",
-    description: "A platform that connects players with racket stringers",
-    url: "",
+    description: "Platform that connects players with racket stringers",
+    url: "https://www.strengr.no/",
     githubUrl: "",
-    thumbnail:
-      "/assets/images/blogposts/temp-graphics/temp-graphics-thumbnail.png",
+    thumbnail: "/assets/images/blogposts/strengr/strengr-thumbnail.png",
     tags: [
       "React",
       "Tailwind",
