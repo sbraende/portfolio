@@ -9,7 +9,7 @@ const CardList = () => {
   return (
     <>
       <div className="project-category">
-        <h3 className="project-category-tile">Featured projects ⭐️</h3>
+        <h3 className="project-category-tile">Featured projects</h3>
         <ul className="card-list">
           {featuredProjects.map((webpage) => {
             return <Card webpage={webpage} key={webpage.id} />;
