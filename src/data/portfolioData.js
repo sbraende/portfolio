@@ -5,6 +5,7 @@ const portfolioData = [
     description: "Platform that connects players with racket stringers",
     url: "https://www.strengr.no/",
     githubUrl: "",
+    feature: true,
     thumbnail: "/assets/images/blogposts/strengr/strengr-thumbnail.png",
     tags: [
       "React",
@@ -22,6 +23,7 @@ const portfolioData = [
     description: "Webshop featuring natural language AI Search",
     url: "https://sbraende-stridelabs.netlify.app/",
     githubUrl: "https://github.com/sbraende/stride-labs",
+    feature: true,
     thumbnail: "/assets/images/blogposts/stride-labs/stride-labs-thumbnail.png",
     tags: [
       "React",

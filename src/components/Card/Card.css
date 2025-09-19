@@ -1,5 +1,5 @@
 .card {
-  padding-top: var(--spacing-medium);
+  padding: var(--spacing-medium);
 }
 
 .card__image-container {
